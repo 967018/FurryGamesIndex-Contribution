@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="学习如何编写兽人控游戏索引的游戏数据文件。" />
+        <meta property="og:title" content="游戏数据文件贡献指南">
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://967018.github.io/FurryGamesIndex-Contribution/games.html" />
+        <meta property="og:image" content="./resources/logo_bounded.png" />
+        <title>兽人控游戏索引 - 游戏数据文件贡献指南</title>
+        <link rel="icon" href="./resources/favicon.ico" />
+        <link rel="stylesheet" href="./styles/global.css" />
+        <link rel="stylesheet" href="./styles/games.css" />
+        <script defer src="./scripts/global.js"></script>
+    </head>
+    <body type-ramp="body">
+        <header>
+            <nav>
+                <ul type-ramp="body-large">
+                    <li>
+                        <a href="https://furrygames.top/zh-cn/index.html">
+                            <fds-icon name="fgi" size="24" theme="shaded"></fds-icon>
+                            兽人控游戏索引
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://furrygames.top/zh-cn/list.html">
+                            <fds-icon name="games" size="20" theme="regular"></fds-icon>
+                            <span>游戏列表</span>
+                        </a>
+                    </li>
+                    <li class="activated">
+                        <a href="./index.html">
+                            <fds-icon name="person-add" size="20" theme="shaded"></fds-icon>
+                            <span>项目贡献</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://furrygames.top/zh-cn/search.html">
+                            <fds-icon name="search" size="20" theme="regular"></fds-icon>
+                            <span>搜索</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://furrygames.top/languages.html">
+                            <fds-icon name="languauge" size="20" theme="regular"></fds-icon>
+                            <span>语言</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="headings">
+                <h1>贡献指南<wbr /><span> - </span><span type-ramp="title-large">游戏数据文件</span></h1>
+                <a class="button" href="./index.html" variant="standard" density="dense">
+                    <fds-icon name="chevron-left" size="16" theme="regular"></fds-icon>
+                    返回
+                </a>
+            </div>
+            <p type-ramp="subtitle">根据资料的资格能力和丰富程度，我们划分出四个阶段来编写游戏数据文件而后部署到 FGI 中。通过下面的指南，你可以根据掌握资料的情况前进到适合的阶段，只看需要看的，只写需要写的。</p>
+            <article>
+                <h2 type-ramp="subtitle">一、提议阶段</h2>
+                <ul type-ramp="body-large">
+                    <li><a class="hyperlink" href="#permit">游戏准入门槛</a></li>
+                </ul>
+            </article>
+            <article>
+                <h2 type-ramp="subtitle">二、草稿阶段</h2>
+                <ul type-ramp="body-large">
+                    <li><a class="hyperlink" href="#database-introduction">初步认识 FGI 数据库</a></li>
+                    <li><a class="hyperlink" href="#writting-format">数据文件的编写要求</a></li>
+                    <li><a class="hyperlink" href="#game-id">游戏 ID</a></li>
+                    <li><a class="hyperlink" href="#name">名称属性</a></li>
+                    <li><a class="hyperlink" href="#expunge">软删除属性</a></li>
+                    <li><a class="hyperlink" href="#description">描述与简要描述属性</a></li>
+                </ul>
+            </article>
+            <article>
+                <h2 type-ramp="subtitle">三、预览阶段</h2>
+                <ul type-ramp="body-large">
+                    <li><a class="hyperlink">进一步认识 FGI 数据库</a></li>
+                    <li><a class="hyperlink">媒体属性</a></li>
+                    <li><a class="hyperlink">作者属性</a></li>
+                    <li><a class="hyperlink">标签属性</a></li>
+                    <li><a class="hyperlink">链接属性</a></li>
+                </ul>
+            </article>
+            <article>
+                <h2 type-ramp="subtitle">四、成品阶段</h2>
+                <ul type-ramp="body-large">
+                    <li><a class="hyperlink">数据文件的本地化</a></li>
+                    <li><a class="hyperlink">被取代属性</a></li>
+                    <li><a class="hyperlink">注释</a></li>
+                </ul>
+            </article>
+        </header>
+        <hr class="divider" />
+        <main>
+            <section id="propose">
+                <h2 type-ramp="title">提议阶段</h2>
+                <p type-ramp="subtitle">此阶段专注于判断你想添加到 FGI 的游戏适不适合编入 FGI。</p>
+                <article id="permit">
+                    <h3 type-ramp="subtitle">游戏准入门槛</h3>
+                    <div class="text">
+                        <p>我们判断一个游戏是否准入 FGI 主要看它：</p>
+                        <ul>
+                            <li>是否为独立的电子游戏</li>
+                            <li>是否有兽人作为推动游戏进程的主要力量</li>
+                        </ul>
+                        <p>若你想添加的游戏符合这两条标准，那么接下来你可以在本项目的 Github 仓库发表请求添加游戏的议题，由 FGI 成员或其他贡献者编写游戏数据文件；也可以前进到下一阶段自己动手编写文件！</p>
+                        <ul class="expander">
+                            <li class="item">
+                                <a href="https://github.com/FurryGamesIndex/games/issues/new/choose">
+                                    <fds-icon name="github" size="20"></fds-icon>
+                                    在 Github 申请添加游戏
+                                    <fds-icon name="open" size="20" theme="regular"></fds-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="interpretation">
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">我能提交主要关于其他性向的兽人游戏吗？</figcaption>
+                            <p>当然可以！由于当前本项目的贡献者们大部分是同性恋，所以 FGI 里面向同性恋受众的游戏较多。不过我们也添加了一些异性恋受众游戏。如果你希望看到你喜欢的其他性向游戏编入到 FGI，不要犹豫，现在就向我们提交申请或直接提交游戏数据文件吧。</p>
+                        </figure>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">那人物兽化程度最高仅到兽耳（Kemonomimi）的游戏呢？</figcaption>
+                            <p>不行！另外，如果符合准入标准的游戏中还同时包含了兽耳化的人物，我们会将他们与普通人类归到一类。</p>
+                        </figure>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">那只包含纯兽的游戏呢？</figcaption>
+                            <p>可以。因为我们是以人类的思维去操控它们，我们认为这也算兽人游戏。</p>
+                        </figure>
+                    </div>
+                </article>
+            </section>
+            <hr class="divider" />
+            <section id="draft">
+                <h2 type-ramp="title">草稿阶段</h2>
+                <p type-ramp="subtitle">此阶段专注于创建游戏数据文件并创建多人合作的基础。</p>
+                <article id="database-introduction">
+                    <h3 type-ramp="subtitle">初步认识 FGI 数据库</h3>
+                    <div class="text">
+                        <p>FGI 网站上每个游戏条目都是利用 FGI 数据库中对应的数据文件处理而成的。这些文件存放于<a class="hyperlink" href="https://github.com/FurryGamesIndex/games/tree/master/games">项目 games 仓库的 games 子目录（games/games）</a>中。</p>
+                        <p>要编辑现有的游戏页面，只需要找到对应的数据文件进行编辑；要创建新的游戏页面，则需要创建一个新的游戏数据文件。</p>
+                    </div>
+                    <div class="interpretation">
+                        <figure>
+                            <picture>
+                                <source srcset="./resources/illustrations/meta_file_wide_dark.png" media="(prefers-color-scheme: dark)" />
+                                <img src="./resources/illustrations/meta_file_wide_light.png" />
+                            </picture>
+                            <figcaption><i>Adastra</i> 对应的游戏数据元文件为「Adastra.yaml」。</figcaption>
+                        </figure>
+                    </div>
+                    <div class="text">
+                        <p>直接存放在 games/games 中的游戏数据文件我们将其称为「元文件」，除有特别说明外，下文各个属性都必须写在元文件中。</p>
+                        <p>元文件里的各个属性（如名称、介绍、链接）的内容均默认以英文编写，针对其他语言进行内容本地化的游戏数据文件则存放在 games/games/l10n 中。FGI 将抽取游戏的元文件及其本地化文件来生成网站页面。</p>
+                        <p>即使你提交的游戏未有英语翻译，也需要首先在 games/games 下创建元文件，而后才在其他语言的目录（games/games/l10n）下创建本地化的数据文件。但这不代表数据文件中的各信息都必须翻译为英文，若缺少合适的翻译，元文件中可以写入原语言文本。</p>
+                    </div>
+                    <div class="interpretation">
+                        <figure>
+                            <picture>
+                                <img src="./resources/illustrations/localization_process_wide.png" />
+                            </picture>
+                            <figcaption>虽然《煦风新笺》的原始语言为中文，但也必须先创建主要以英文书写的元文件，之后再创建针对中文的本地化数据文件。</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article id="writting-format">
+                    <h3 type-ramp="subtitle">数据文件的编写要求</h3>
+                    <div class="text">
+                        <p>在编辑游戏数据文件时，需特别注意内容编写是否符合 YAML 格式规范，否则 FGI 将无法正常处理此文件。如果你还不熟悉 YAML，我们建议你可以参考或套用现有的数据文件进行编写，编写 FGI 数据文件需要掌握的语法规则其实非常少。</p>
+                        <p>为了增强数据文件的易读性，每个一级属性后须插入一个空行。另外，在编写数据文件时要特别注意用于缩进的空格的个数和位置是否正确。</p>
+                        <p>下面我们开始创建一个数据文件吧！</p>
+                    </div>
+                    <div class="interpretation">
+                        <figure class="info-bar" severity="warning">
+                            <fds-icon name="important" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">在游戏数据文件中必须使用 UNIX (LF) 换行符</figcaption>
+                            <p>FGI 项目仓库已使用 .gitattributes 要求 git 使用 LF 换行符，标准的 git 软件通常可以正常运作。</p>
+                        </figure>
+                    </div>
+                </article>
+                <article id="game-id">
+                    <h3 type-ramp="subtitle">游戏 ID</h3>
+                    <div class="text">
+                        <p>游戏 ID 是用于引用游戏的字符串，游戏数据文件和对应的资源文件夹都以此命名。ID 优先取用游戏的官方正式英语名称（保留原始大小写）。</p>
+                        <p>若游戏无英语名称：</p>
+                        <ul>
+                            <li>原名称为日语的，取其罗马字表示</li>
+                            <li>原名称为汉语的，取其拼音表示</li>
+                        </ul>
+                        <p>定义 ID 时要注意：</p>
+                        <ul>
+                            <li>每个游戏的 ID 唯一且不同游戏间的 ID 不可重复</li>
+                            <li>只能包含 ASCII 字符集中的英文（大小写均可）、数字和下划线</li>
+                            <li>若游戏名称包含空格，则以<code>_</code>代替</li>
+                            <li>禁止以单独一个<code>_</code>开头</li>
+                        </ul>
+                    </div>
+                    <div class="interpretation">
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">要是游戏名称里有特殊符号怎么办？</figcaption>
+                            <p>在 ID 中去掉这些符号。例如游戏「Them's Fightin' Herds」的数据文件 ID 为「Thems_Fightin_Herds」。</p>
+                        </figure>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">如果以罗马音或拼音定义 ID，那它们的大小写有要求吗？</figcaption>
+                            <p>有，对于罗马音 ID，每个词组的罗马字首字母大写；对于拼音 ID，每个字的拼音首字母大写。</p>
+                            <p>例如：『オスケモアイランドの秘密』的数据文件 ID 为「Osukemoairando_No_Himitsu」；《〈苦〉〈黏〉〈寒〉〈毒〉四部曲》的数据文件 ID 为「Ku_Nian_Han_Du」。</p>
+                        </figure>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">我想添加的游戏跟 FGI 里的游戏重名了或者容易混淆，怎么办？</figcaption>
+                            <p>在原游戏 ID 后面添加两个<code>_</code>，再添加开发者（组、商）名称后缀。</p>
+                            <p>例如：由 Might and Delight 制作的 <i>Shelter 2</i> 不是由 rausmutt 制作的 <i>Shelter</i> 的续作，因此前者的游戏 ID 为「Shelter_2__Might_and_Delight」 。</p>
+                        </figure>
+                    </div>
+                </article>
+                <article id="name">
+                    <h3 type-ramp="subtitle">名称属性</h3>
+                    <div class="text">
+                        <p>游戏名称优先取用该游戏的官方英语正式名称（保留原始大小写，下文简称「英语名称」），其次取用该游戏最广泛传播的英文译名，再次取用原名称。</p>
+                        <p>选取名称时要注意：</p>
+                        <ul>
+                            <li>不可以使用任何来源的昵称</li>
+                            <li>若原游戏名称带有<code>:</code>等特殊字符，需要将游戏名称使用<code>'</code>括起来</li>
+                            <li>若原游戏名称带有<code>'</code>，需要改用<code>"</code>将游戏名称括起来</li>
+                        </ul>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>name: </code><span>游戏名称</span>
+                        </pre>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">要是原游戏名称分英式和美式之类的地区差异怎么办？</figcaption>
+                            <p>按以下顺序优先取用：第一，最多数主创人员最长期居住地（以英语为官方语言的地区）的英语形式；第二，最多数主创人员出生地（以英语为官方语言的地区）的英语形式；第三，开发商所在地的英语形式。</p>
+                        </figure>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">要是原游戏名称只有日文形式，直接放上去不方便非日语用户输入这个名称怎么办？</figcaption>
+                            <p>可以参照游戏 ID 和本地化名称属性的规则，为原游戏名称附上罗马字。</p>
+                        </figure>
+                    </div>
+                </article>
+                <article id="expunge">
+                    <h3 type-ramp="subtitle">软删除属性</h3>
+                    <div class="text">
+                        <p>若游戏官方未释出公开且至今能够有效获取的测试版本，则需在元文件中添加此属性。</p>
+                        <p>使用该属性将使该游戏从游戏列表、站内搜索结果和通用 Web 搜索引擎中被删除，但游戏页面仍然实际存在，且不会在作者页面与该作者的“更多游戏小部件”中隐藏。游戏页面上将显示提示条。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>expunge: true</code>
+                        </pre>
+                        <figure class="info-bar" severity="critical">
+                            <fds-icon name="important" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">非必要不添加</figcaption>
+                            <p>该属性为可选的状态切换属性，若不欲软删除游戏，也不应写入<code>expunge: false</code>。</p>
+                        </figure>
+                    </div>
+                </article>
+                <article id="description">
+                    <h3 type-ramp="subtitle">描述与简要描述属性</h3>
+                    <div class="text">
+                        <p>简要描述属性承载着游戏简要的文字介绍，用于 FGI 游戏列表的标准视图。该属性为可选属性，若未添加该属性，网页处理程序将自动从描述属性中提取简要描述。</p>
+                        <p>一般简要描述应短于游戏的完整描述，但完整描述本身较短的除外。简要描述的字数原则上最大不得超过 400 个单字节字符，推荐大于 200 个单字节字符。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>brief-description: </code><span>简介</span>
+                        </pre>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">我要怎么分辨单字节字符和双字节字符？</figcaption>
+                            <p>西文字母、数字、空格或其他西文符号等通常为单字节字符；中日韩文字及标点符号通常为双字节字符。</p>
+                        </figure>
+                    </div>
+                    <div class="text">
+                        <p>描述属性主要承载着游戏的完整文字介绍。介绍的内容应在<code>description: |</code>后换行写入，且每段描述前必须空两格。</p>
+                        <p>在内容上，描述与简要描述属性都应：</p>
+                        <ul>
+                            <li>优先取用官方原文</li>
+                            <li>不涉及关键情节或选择分支后剧情的剧透</li>
+                            <li>不包含敏感信息或违反目标语言当地法律法律的字词、文段</li>
+                        </ul>
+                        <p>描述属性的内容支持 Markdown 格式，在描述属性之后添加描述格式属性即可启用该功能。但我们不建议在非必要情况下在描述属性中插入图片。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>description: |</code><span><br>&nbsp;&nbsp;第一段介绍</span><span><br>&nbsp;&nbsp;第二段介绍</span><span><br>&nbsp;&nbsp;……</span>
+                        </pre>
+                        <pre>
+                            <code>description-format: markdown</code>
+                        </pre>
+                    </div>
+                </article>
+            </section>
+            <hr class="divider" />
+            <section id="candidate">
+                <h2 type-ramp="title">预览阶段</h2>
+                <p type-ramp="subtitle">此阶段专注于为游戏数据文件填写足以预备上架 FGI 的基础信息。</p>
+            </section>
+            <hr class="divider" />
+            <section id="release">
+                <h2 type-ramp="title">成品阶段</h2>
+                <p type-ramp="subtitle">此阶段专注于为游戏数据文件填写足以正式上架 FGI 的更多信息，或是进一步完善已有的信息。</p>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+:where([type-ramp="caption"]) {
+    font-size: 0.75rem;
+    font-weight: 400;
+    font-family: "Segoe UI Variable Small", system-ui, sans-serif;
+}
+
+:where([type-ramp="body"]) {
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: "Segoe UI Variable Text", system-ui, sans-serif;
+}
+
+:where([type-ramp="body-strong"]) {
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: "Segoe UI Variable Text", system-ui, sans-serif;
+}
+
+:where([type-ramp="body-large"]) {
+    font-size: 1.125rem;
+    font-weight: 400;
+    font-family: "Segoe UI Variable Text", system-ui, sans-serif;
+}
+
+:where([type-ramp="subtitle"]) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: "Segoe UI Variable Display", system-ui, sans-serif;
+}
+
+:where([type-ramp="title"]) {
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-family: "Segoe UI Variable Display", system-ui, sans-serif;
+}
+
+:where([type-ramp="title-large"]) {
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: "Segoe UI Variable Display", system-ui, sans-serif;
+}

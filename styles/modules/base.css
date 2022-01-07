@@ -1,0 +1,104 @@
+:root {
+    --blue-200: #98ecfe;
+    --blue-300: #60ccfe;
+    --blue-500: #0093f9;
+    --blue-700: #0078d4;
+    --blue-800: #005eb7;
+    --blue-900: #003d92;
+    --orange-500: #ffb900;
+    --grey-950: #1b1a19;
+}
+
+:root {
+    --shadow-dialog: 0px 32px 64px rgba(0, 0, 0, 0.1876), 0px 2px 21px rgba(0, 0, 0, 0.1474);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-primary: rgb(0 0 0 / 89.56%);
+        --text-secondary: rgb(0 0 0 / 60.63%);
+        --text-tertiary: rgb(0 0 0 / 44.58%);
+        --accent-text-primary: var(--blue-900);
+        --text-on-accent-primary: white;
+        --text-on-accent-disabled: white;
+    }
+    :root {
+        --control-fill-default: rgb(255 255 255 / 70%);
+        --control-fill-secondary: rgb(249 249 249 / 50%);
+        --control-fill-tertiary: rgb(249 249 249 / 30%);
+        --accent-fill: var(--blue-800);
+        --accent-fill-secondary: rgb(0 94 183 / 90%);
+        --accent-fill-tertiary: rgb(0 94 183 / 80%);
+        --accent-fill-disabled: rgb(0 0 0 / 21.69%);
+    }
+    :root {
+        --control-gradient: linear-gradient(rgb(0 0 0 / 5.78%) 87.5%, rgb(0 0 0 / 16.22%) 100%);
+        --accent-control-gradient: linear-gradient(rgb(255 255 255 / 8%) 87.5%, rgb(0 0 0 / 40%) 100%);
+    }
+    :root {
+        --control-stroke-default: rgb(0 0 0 / 5.78%);
+        --control-stroke-on-accent-default: rgb(255 255 255 / 8%);
+        --card-stroke-default: rgb(0 0 0 / 5.78%);
+        --surface-stroke-default: rgb(117 117 117 / 40%);
+        --divider-stroke-default: rgb(0 0 0 / 8.03%);
+    }
+    :root {
+        --card-background-default: rgb(255 255 255 / 70%);
+        --card-background-secondary: rgb(246 246 246 / 50%);
+        --card-background-tertiary: rgb(237 237 237 / 50%);
+        --layer-background-default: rgb(255 255 255 / 50%);
+        --solid-background-base: #f3f3f3;
+        --solid-background-tertiary: #f9f9f9;
+    }
+    :root {
+        --system-caution: #9d5d00;
+        --system-caution-background: #fff4ce;
+        --system-critical: #c42b1c;
+        --system-critical-background: #fde7e9;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: white;
+        --text-secondary: rgb(255 255 255 / 78.6%);
+        --text-tertiary: rgb(255 255 255 / 54.42%);
+        --accent-text-primary: var(--blue-200);
+        --text-on-accent-primary: black;
+        --text-on-accent-disabled: rgb(255 255 255 / 53.02%);
+    }
+    :root {
+        --control-fill-default: rgb(255 255 255 / 6.05%);
+        --control-fill-secondary: rgb(255 255 255 / 8.37%);
+        --control-fill-tertiary: rgb(255 255 255 / 3.26%);
+        --accent-fill: var(--blue-300);
+        --accent-fill-secondary: rgb(96 204 254 / 90%);
+        --accent-fill-tertiary: rgb(96 204 254 / 80%);
+        --accent-fill-disabled: rgb(255 255 255 / 15.81%);
+    }
+    :root {
+        --control-gradient: linear-gradient(rgb(255 255 255 / 9.3%) 0%, rgb(255 255 255 / 6.98%) 12.5%);
+        --accent-control-gradient: linear-gradient(rgb(255 255 255 / 8%) 87.5%, rgb(0 0 0 / 14%) 100%);
+    }
+    :root {
+        --control-stroke-default: rgb(255 255 255 / 6.98%);
+        --control-stroke-on-accent-default: rgb(255 255 255 / 8%);
+        --card-stroke-default: rgb(0 0 0 / 10%);
+        --surface-stroke-default: rgb(117 117 117 / 40%);
+        --divider-stroke-default: rgb(255 255 255 / 8.37%);
+    }
+    :root {
+        --card-background-default: rgb(255 255 255 / 5%);
+        --card-background-secondary: rgb(255 255 255 / 3%);
+        --card-background-tertiary: rgb(255 255 255 / 1%);
+        --layer-background-default: rgb(58 58 58 / 30%);
+        --solid-background-base: #202020;
+        --solid-background-tertiary: #282828;
+    }
+    :root {
+        --system-caution: #fce100;
+        --system-caution-background: #433519;
+        --system-critical: #ff99a4;
+        --system-critical-background: #442726;
+    }
+}

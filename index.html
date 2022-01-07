@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="从多个方面了解如何帮助兽人控游戏索引发展。" />
+        <meta property="og:title" content="项目贡献">
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://967018.github.io/FurryGamesIndex-Contribution/index.html" />
+        <meta property="og:image" content="./resources/logo_bounded.png" />
+        <title>兽人控游戏索引 - 项目贡献</title>
+        <link rel="icon" href="./resources/favicon.ico" />
+        <link rel="stylesheet" href="./styles/global.css" />
+        <link rel="stylesheet" href="./styles/contribution.css" />
+        <script defer src="./scripts/global.js"></script>
+    </head>
+    <body type-ramp="body">
+        <header>
+            <nav>
+                <ul type-ramp="body-large">
+                    <li>
+                        <a href="https://furrygames.top/zh-cn/index.html">
+                            <fds-icon name="fgi" size="24" theme="shaded"></fds-icon>
+                            兽人控游戏索引
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://furrygames.top/zh-cn/list.html">
+                            <fds-icon name="games" size="20" theme="regular"></fds-icon>
+                            <span>游戏列表</span>
+                        </a>
+                    </li>
+                    <li class="activated">
+                        <a href="#">
+                            <fds-icon name="person-add" size="20" theme="shaded"></fds-icon>
+                            <span>项目贡献</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://furrygames.top/zh-cn/search.html">
+                            <fds-icon name="search" size="20" theme="regular"></fds-icon>
+                            <span>搜索</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://furrygames.top/languages.html">
+                            <fds-icon name="languauge" size="20" theme="regular"></fds-icon>
+                            <span>语言</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h1 type-ramp="title-large">项目贡献</h1>
+            <p type-ramp="subtitle">兽人控游戏索引（Furry Games Index）是一个年轻的开放型社区项目，我们承诺本项目始终为非营利性项目，并始终植根于社区。我们的项目团队规模很小，你提供的任何帮助对我们都非常宝贵。若感兴趣，帮助本项目的途径主要有如下三种。</p>
+            <article>
+                <h2 type-ramp="subtitle">向朋友推荐 FGI</h2>
+                <p>我们热爱兽文化社区，并希望能促进兽文化的进步。FGI 是汇聚兽文化发展驱动力，沟通兽文化生产者与消费者的桥梁之一。若你能将本项目分享给更多朋友，将会让更多游戏作品得以实现价值，让更多游戏作者得到丰富回应。这既是对他们用爱发电的支持与激励，也是对我们志愿工作的赞赏与鼓励。</p>
+                <ul class="expander">
+                    <li class="item">
+                        <button id="share">
+                            <fds-icon name="share" size="20" theme="filled"></fds-icon>
+                            分享本项目
+                        </button>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2 type-ramp="subtitle">引荐新游戏或提供修缮建议</h2>
+                <p>受限于团队规模与性质，我们不可能发现所有兽人游戏作品并将其编入本索引中；部分游戏、作者条目中可能会存在疏忽、错误或不完善的情况；本项目网站在工程开发和用户体验方面还有尚待提升、改进的地方……</p>
+                <p>总之，我们欢迎你对 FGI 任何方面提出任何建设性意见。提供意见的规范渠道是对应的 Github 议题栏目，但我们也欢迎你通过其他渠道联系我们或任意一位成员。</p>
+                <ul class="expander">
+                    <li class="item">
+                        <a href="https://github.com/FurryGamesIndex/games/issues/new/choose">
+                            <fds-icon name="github" size="20"></fds-icon>
+                            在 Github 创建新议题
+                            <fds-icon name="open" size="20" theme="regular"></fds-icon>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://t.me/+pTJEQy_b64E4MzQx">
+                            <fds-icon name="telegram" size="20"></fds-icon>
+                            在 Telegram 群组发言
+                            <fds-icon name="open" size="20" theme="regular"></fds-icon>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="mailto:webmaster@furrygames.top">
+                            <fds-icon name="mail" size="20" theme="filled"></fds-icon>
+                            向我们发送邮件
+                            <fds-icon name="open" size="20" theme="regular"></fds-icon>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2 type-ramp="subtitle">直接参与项目构建</h2>
+                <p>FGI 最终呈现出的 Web 界面由一系列数据文件处理而成，其中最关键的游戏、作者条目源文档以 YAML 语言格式编写，非常易于编辑。人人都可以直接向我们或代码库提交编辑好的 YAML 文件来为 FGI 添加新游戏或作者信息，也可以提交原有文件的修正版本。经审核通过后，你的编辑成果能快速应用在我们的网站上。</p>
+                <p>我们的代码库涉及 Python 、HTML、CSS、JavaScript 等语言，并利用相关技术实现 Web 界面、搜索服务、缓存、其他客户端逻辑等等。如果你在任何一个领域有经验，都可以直接向本项目的 Github 仓库发出拉取请求！我们也会耐心解答关于项目构建的问题。</p>
+                <ul class="expander">
+                    <li class="item">
+                        <a href="#guides">
+                            <fds-icon name="book-compass" size="20" theme="filled"></fds-icon>
+                            阅读贡献指南
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://github.com/FurryGamesIndex/games">
+                            <fds-icon name="github" size="20"></fds-icon>
+                            访问本项目的 Github 仓库
+                            <fds-icon name="open" size="20" theme="regular"></fds-icon>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </header>
+        <hr class="divider" />
+        <main>
+            <section id="guides">
+                <h2 type-ramp="title">贡献指南</h2>
+                <article>
+                    <img src="./resources/games.png" alt="" width="128" height="128" />
+                    <h3 type-ramp="subtitle">游戏数据文件</h3>
+                    <p>添加新游戏条目<br />或维护现有的游戏条目</p>
+                    <a class="button" variant="accent" href="./games.html" role="button">查看</a>
+                </article>
+                <article>
+                    <img src="./resources/authors.png" alt="" width="128" height="128" />
+                    <h3 type-ramp="subtitle">作者数据文件</h3>
+                    <p>添加新作者条目<br />或维护现有的作者条目</p>
+                    <a class="button" variant="accent" href="./authors.html" role="button" aria-disabled="true">查看</a>
+                </article>
+                <article>
+                    <img src="./resources/patches-submitting.png" alt="" width="128" height="128" />
+                    <h3 type-ramp="subtitle">提交更改的注意事项</h3>
+                    <p>向本项目的 Github 仓库<br />直接提交更改或拉取请求</p>
+                    <a class="button" variant="accent" href="./patches-submitting.html" role="button" aria-disabled="true">查看</a>
+                </article>
+            </section>
+            <hr class="divider" />
+            <section id="contributors">
+                <h2 type-ramp="title">项目成员与外部贡献者</h2>
+                <article id="fgi-members">
+                    <h3 type-ramp="subtitle">FGI 成员</h3>
+                    <p>FGI 成员是本项目正式的志愿维护者。和一般的外部贡献者不同，FGI 成员拥有直接编辑项目仓库的权限和其他权利。如果你经常参与数据条目的编辑或贡献代码，我们欢迎你的加入。</p>
+                    <ul class="expander">
+                        <li class="item">
+                            <button id="about-members">
+                                <fds-icon name="document-ribbon" size="20" theme="filled"></fds-icon>
+                                查看 FGI 成员规章与加入方式
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="members">
+                        <article>
+                            <img class="avatar" src="./resources/avatars/Utopic Panther.jpg" alt="" width="48" height="48" />
+                            <h4 type-ramp="body-large">Utopic Panther</h4>
+                            <p>创始人与核心工程师。参与新游戏提交，数据条目与项目文档编辑。</p>
+                            <address>
+                                <a class="hyperlink" href="https://github.com/UtopicPanther" type-ramp="body">Github</a>
+                                <a class="hyperlink" href="https://t.me/UtopicPanther">Telegram</a>
+                                <a class="hyperlink" href="https://twitter.com/UtopicPanther">Twitter</a>
+                            </address>
+                        </article>
+                        <article>
+                            <img class="avatar" src="./resources/avatars/滑稽HuaJi2333.png" alt="" width="48" height="48" />
+                            <h4 type-ramp="body-large">滑稽HuaJi2333</h4>
+                            <p>参与项目工程维护，新游戏提交，数据条目与项目文档编辑。</p>
+                            <address>
+                                <a class="hyperlink" href="https://github.com/HuaJi2333DaDa">Github</a>
+                                <a class="hyperlink" href="https://t.me/HuaJi2333dada">Telegram</a>
+                            </address>
+                        </article>
+                        <article>
+                            <img class="avatar" src="./resources/avatars/小虎故洞.jpg" alt="" width="48" height="48" />
+                            <h4 type-ramp="body-large">小虎故洞</h4>
+                            <p>参与新游戏提交，数据条目编辑。</p>
+                            <address>
+                                <a class="hyperlink" href="https://www.furaffinity.net/user/tiger-jungle/">Furaffinity</a>
+                                <a class="hyperlink" href="https://github.com/TigerCubDen">Github</a>
+                                <a class="hyperlink" href="https://t.me/KumalParker">Telegram</a>
+                            </address>
+                        </article>
+                        <article>
+                            <img class="avatar" src="./resources/avatars/UTL_1138.jpg" alt="" width="48" height="48" />
+                            <h4 type-ramp="body-large">UTL_1138</h4>
+                            <p>参与“孔雀”与“蜂鸟”UI 主题设计，新游戏提交，数据条目与项目文档编辑。</p>
+                            <address>
+                                <a class="hyperlink" href="https://www.behance.net/utl1138">Behance</a>
+                                <a class="hyperlink" href="https://github.com/967018">Github</a>
+                            </address>
+                        </article>
+                    </div>
+                </article>
+                <article id="other-contributors">
+                    <h3 type-ramp="subtitle">外部贡献者</h3>
+                    <p>我们同样接受匿名的帮助，匿名贡献者随时可以选择加入此列表。感谢你们的热心帮助！</p>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">xiaoxiaohaoa</h4>
+                        <p>参与新游戏提交，数据条目与项目文档编辑。</p>
+                        <address>
+                            <a class="hyperlink" href="https://github.com/xiaoxiaohaoa">Github</a>
+                            <a class="hyperlink" href="https://t.me/xiaoxiaohaoa">Telegram</a>
+                        </address>
+                    </article>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">rockytherookie</h4>
+                        <p>引荐多种新游戏</p>
+                        <address>
+                            <a class="hyperlink" href="https://www.furaffinity.net/user/rockytherookie/">Furaffinity</a>
+                            <a class="hyperlink" href="https://twitter.com/rockytherookie">Pixiv</a>
+                            <a class="hyperlink" href="https://www.pixiv.net/users/17292937">Twitter</a>
+                        </address>
+                    </article>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">BlueJett</h4>
+                        <p>参与新游戏提交，数据条目编辑。</p>
+                        <address>
+                            <a class="hyperlink" href="https://github.com/BlueJett">Github</a>
+                        </address>
+                    </article>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">Downey Rem / 唐尼瑞姆|唐门</h4>
+                        <p>参与新游戏提交，数据条目与项目文档编辑。</p>
+                        <address>
+                            <a class="hyperlink" href="https://www.pixiv.net/users/16721009">Pixiv</a>
+                            <a class="hyperlink" href="https://t.me/TNTwwxs">Telegram</a>
+                        </address>
+                    </article>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">人间食尽</h4>
+                        <p>引荐多种新游戏</p>
+                        <address>
+                            <a class="hyperlink" href="https://www.pixiv.net/users/3337300">Pixiv</a>
+                        </address>
+                    </article>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">SouthFox</h4>
+                        <p>参与项目工程维护，新游戏提交，数据条目与项目文档编辑。</p>
+                        <address>
+                            <a class="hyperlink" href="https://github.com/SouthFox09">Github</a>
+                        </address>
+                    </article>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">Matsuura Keita</h4>
+                        <p>参与数据条目编辑。</p>
+                        <address>
+                            <a class="hyperlink" href="https://twitter.com/Keita_Matsuura_">Twitter</a>
+                        </address>
+                    </article>
+                    <article>
+                        <fds-icon name="person" size="20" theme="filled"></fds-icon>
+                        <h4 type-ramp="body-large">Max White</h4>
+                        <p>参与数据条目编辑。</p>
+                        <address>
+                            <a class="hyperlink" href="https://discordapp.com/users/MaxWhite#3249">Discord</a>
+                        </address>
+                    </article>
+                </article>
+                <article>
+                    <h3 type-ramp="subtitle">特别鸣谢</h3>
+                    <article>
+                        <img class="avatar" src="./resources/avatars/LuckyDoge.jpg" alt="" width="48" height="48" />
+                        <h4 type-ramp="body-large">LuckyDoge</h4>
+                        <p>提供了丰富的游戏列表作为 FGI 的原始资料来源，大大加速了项目的实际落地。</p>
+                        <address>
+                            <a class="hyperlink" href="https://weibo.com/projectdoge">微博</a>
+                            <a class="hyperlink" href="https://twitter.com/GamerLuckyDoge">Twitter</a>
+                        </address>
+                    </article>
+                </article>
+            </section>
+            <dialog>
+                <form method="dialog">
+                    <div class="content">
+                        <h1 type-ramp="subtitle">FGI 成员规章与加入方式</h1>
+                        <h2 type-ramp="body-strong">权利</h2>
+                        <ul>
+                            <li>FGI 成员可直接编辑组织仓库或创建新仓库</li>
+                            <li>FGI 成员可提出组织内部决议或对决议投票</li>
+                            <li>FGI 成员可对外代表 FGI 项目</li>
+                            <li>FGI 成员可管理一部分项目资源与基础设施</li>
+                        </ul>
+                        <h2 type-ramp="body-strong">义务</h2>
+                        <ul>
+                            <li>FGI 成员应始终以用户和兽文化社群为中心处理内部或外部事务，优先考虑兽文化社群的利益</li>
+                            <li>FGI 成员应帮助推动 FGI 本身的发展。例如，FGI 成员可以维护项目的代码、文档或数据；倾听来自我们用户和兽文化社群的声音并帮助解决问题</li>
+                            <li>FGI 成员应帮助 FGI 项目的贡献者以及潜在贡献者。例如，FGI 成员可以帮助审查贡献者的拉取请求，提出修改建议以及处理合并</li>
+                            <li>FGI 成员应将其为 FGI 项目创造的工作成果授权给 FGI 和社群使用。这种授权不可特定于 FGI，即允许 FGI 潜在的派生项目和其他任何项目以同样的权利使用</li>
+                            <li>FGI 成员应尊重所有成员的工作成果。FGI 成员是志愿工作的，没有任何数量、范围、完成时间等工作指标，但项目组可能会删除超过 6 个月没有任何项目活动的成员，因此被删除的成员可选择在将来重新加入。（删除成员不会抹掉该成员的历史贡献记录）</li>
+                        </ul>
+                        <h2 type-ramp="body-strong">加入方式</h2>
+                        <ol>
+                            <li>申请者需在 6 个月内有 3 次或 3 次以上作为外部贡献者为 FGI 做出可观贡献的记录</li>
+                            <li>同意 FGI 成员规章</li>
+                            <li>联系 FGI 项目负责人</li>
+                            <li>加入 FGI 成员 Telegram 群组</li>
+                        </ol>
+                    </div>
+                    <menu>
+                        <button class="button" variant="standard" value="cancel">关闭</button>
+                    </menu>
+                </form>
+            </dialog>
+        </main>
+        <script>
+            document.querySelector("#share").addEventListener("click", () => {
+                navigator.share({
+                    title: "兽人控游戏索引",
+                    url: "https://furrygames.top/",
+                });
+            });
+            document.querySelector("#about-members").addEventListener("click", () => {
+                document.querySelector("dialog").showModal();
+            });
+        </script>
+    </body>
+</html>

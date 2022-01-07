@@ -1,0 +1,27 @@
+fds-icon {
+    display: inline-flex;
+}
+
+fds-icon::part(path) {
+    fill: currentColor;
+}
+
+.expander fds-icon {
+    color: var(--primary-color);
+}
+
+fds-icon[name="open"]::part(path) {
+    fill: var(--text-tertiary);
+}
+
+@media (prefers-color-scheme: light) {
+    fds-icon[name="github"] {
+        color: #1a1414;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    fds-icon[name="github"] {
+        color: white;
+    }
+}
