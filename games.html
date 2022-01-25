@@ -1643,7 +1643,7 @@
                 <p type-ramp="subtitle">此阶段专注于为游戏数据文件填写足以正式上架 FGI 的更多信息，或是进一步完善已有的信息。</p>
                 <article id="translation">
                     <h3 type-ramp="subtitle">数据文件的本地化</h3>
-                    <div class="text" style="grid-column-end: span 2">
+                    <div class="text intro">
                         <p>若要为元文件中的内容提供翻译，则需在 <a class="hyperlink" href="https://github.com/FurryGamesIndex/games/tree/master/games/l10n">games/l10n</a> 的目标语言文件夹中创建<strong>与元文件名称相同</strong>的数据文件，并根据需要，选择属性写入翻译。</p>
                     </div>
                     <div class="text">
@@ -1715,8 +1715,13 @@
         <script>
             const languageMenu = document.querySelector("#language menu");
             const tranditionalChineseRegion = ["HK", "MO", "TW"];
-            let browserLanguage = navigator.language;
+            const browserLanguage = navigator.language;
             let userLanguage = localStorage.getItem("language");
+
+            const searchParams = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+            const forceLanguage = searchParams.lang;
 
             function changeMetaLanguage(lang) {
                 if (lang == "en") {
@@ -1739,7 +1744,9 @@
                 changeMetaLanguage(lang);
             }
 
-            if (userLanguage) {
+            if (forceLanguage) {
+                switchLanguage(forceLanguage);
+            } else if (userLanguage) {
                 switchLanguage(userLanguage)
             } else {
                 let targetLanguage;

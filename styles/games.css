@@ -203,6 +203,9 @@ summary {
     #species thead th:last-of-type {
         width: calc(120 / 760 * 100%);
     }
+    .intro {
+        grid-column-end: span 2
+    }
 }
 
 @media (max-width: 839px) {
