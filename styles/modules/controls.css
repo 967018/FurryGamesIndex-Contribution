@@ -12,6 +12,7 @@
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 0.875rem;
+    word-break: keep-all;
     user-select: none;
 }
 
@@ -59,8 +60,8 @@
 
 .button:not([aria-disabled="true"]) {
     transition-property: background-color;
-    transition-duration: calc(250ms / 3);
-    transition-timing-function: ease;
+    transition-duration: var(--timing-fastest);
+    transition-timing-function: var(--bare-minimum-ease);
 }
 
 .button[variant="standard"]:not([aria-disabled="true"]):hover {
@@ -90,6 +91,78 @@
     margin: calc(-4em / 14);
 }
 
+/* List */
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list li {
+    height: 36px;
+    display: flex;
+    align-items: stretch;
+    margin: 2px 4px;
+}
+
+.list button {
+    transition-property: background-color;
+    transition-duration: var(--timing-fastest);
+    transition-timing-function: var(--bare-minimum-ease);
+}
+
+.list button:hover {
+    background-color: var(--subtle-fill-secondary);
+}
+
+.list button:active {
+    background-color: var(--subtle-fill-tertiary);
+}
+
+.list li[class~="activated"] button {
+    background-color: var(--subtle-fill-secondary);
+    border-radius: 4px;
+}
+
+.list li[class~="activated"] button:hover {
+    background-color: var(--subtle-fill-tertiary);
+}
+
+.list li[class~="activated"] button:active {
+    background-color: var(--subtle-fill-secondary);
+}
+
+.list li button::after {
+    content: "";
+    inset-inline-start: 0;
+    inline-size: 3px;
+    block-size: 0px;
+    position: absolute;
+    align-self: center;
+    border-radius: 1.5px;
+    background-color: var(--accent-fill);
+    transition-property: none;
+    transition-duration: var(--timing-faster);
+    transition-timing-function: var(--direct-entrance-ease);
+}
+
+.list li button:active::after {
+    transition-property: block-size;
+}
+
+.list li[class~="activated"] button::after {
+    transition-property: block-size;
+    block-size: 16px;
+}
+
+.list li[class~="activated"] button:active::after {
+    block-size: 10px;
+}
+
+.list button {
+    padding-inline: 12px;
+}
+
 /* Dialog */
 
 dialog {
@@ -97,7 +170,8 @@ dialog {
     width: calc(100% - 32px);
     min-width: 320px;
     max-width: 540px;
-    max-height: calc(100% - 32px);
+    min-height: 184px;
+    max-height: 756px;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -109,12 +183,34 @@ dialog {
     outline: 1px solid var(--surface-stroke-default);
 }
 
+dialog {
+    transition-property: opacity;
+    transition-duration: var(--timing-fastest);
+    transition-timing-function: var(--bare-minimum-ease);
+}
+
 dialog:not([open]) {
-    visibility: hidden;
+    opacity: 0;
 }
 
 dialog::backdrop {
-    background: rgb(0 0 0 / 30%);
+    background-color: rgb(0 0 0 / 30%);
+}
+
+dialog[open]::backdrop {
+    animation-name: dialogSmokeShow;
+    animation-duration: calc(250ms / 3);
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes dialogSmokeShow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 dialog .content {
@@ -142,6 +238,36 @@ dialog menu::before {
     display: block;
     border-block-start: 1px solid var(--divider-stroke-default);
     pointer-events: none;
+}
+
+/* Flyout */
+
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+.flyout {
+    position: absolute;
+    background: linear-gradient(rgb(252 252 252 / 85%), rgb(252 252 252 / 85%)), linear-gradient(rgb(252 252 252 / 0%), rgb(252 252 252 / 0%));
+    background-blend-mode: color, luminosity;
+    backdrop-filter: blur(60px);
+    border-radius: 8px;
+    outline: 1px solid var(--surface-stroke-flyout);
+    overflow: hidden;
+    box-shadow: var(--shadow-flyout);
+}
+
+.flyout::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-image: url(../../resources/NoiseAsset_256.png);
+    opacity: 0.02;
+}
+
+menu button {
+    flex-grow: 1;
 }
 
 /* Divider */
@@ -212,6 +338,14 @@ dialog menu::before {
 
 .hyperlink {
     color: var(--accent-text-primary);
+}
+
+.hyperlink:hover {
+    color: var(--accent-text-secondary);
+}
+
+.hyperlink:active {
+    color: var(--accent-text-secondary);
 }
 
 .hyperlink:not(:hover) {

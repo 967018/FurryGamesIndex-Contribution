@@ -39,3 +39,11 @@
     font-weight: 600;
     font-family: "Segoe UI Variable Display", system-ui, sans-serif;
 }
+
+:lang(zh) :where([type-ramp="title-large"]) {
+    line-height: 1.5em;
+}
+
+:lang(en) :where([type-ramp="title-large"]) {
+    line-height: calc(52em / 40);
+}

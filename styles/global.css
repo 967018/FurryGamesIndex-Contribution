@@ -4,6 +4,7 @@
 @import url(modules/typography.css);
 
 /* 重置 */
+
 a {
     color: inherit;
     text-decoration: none;
@@ -23,10 +24,10 @@ button {
     align-items: center;
     padding: 0;
     font-family: inherit;
+    font-size: inherit;
     text-decoration: none;
     color: inherit;
     white-space: nowrap;
-    text-transform: uppercase;
     border: none;
     background-color: transparent;
     box-sizing: border-box;
@@ -70,21 +71,23 @@ ul {
 
 .expander .item {
     background-color: var(--card-background-default);
+}
+
+.expander .item :is(a, button) {
     transition-property: background-color;
-    transition-duration: calc(250ms / 3);
-    transition-timing-function: ease;
+    transition-duration: var(--timing-fastest);
+    transition-timing-function: var(--bare-minimum-ease);
 }
 
 .expander .item :is(a, button):hover {
-    background-color: var(--card-background-secondary);
+    background-color: var(--subtle-fill-secondary);
 }
 
 .expander .item :is(a, button):active {
-    background-color: var(--card-background-tertiary);
+    background-color: var(--subtle-fill-tertiary);
 }
 
 html {
-    font-size: 16px;
     line-height: 1;
 }
 
@@ -155,11 +158,11 @@ nav li {
     align-items: center;
 }
 
-nav li[class~="activated"] {
+nav ul > li[class~="activated"]:not(#language) {
     justify-content: center;
 }
 
-nav li[class~="activated"]::after {
+nav ul > li[class~="activated"]:not(#language)::after {
     content: "";
     inset-block-end: calc(-7em / 9);
     position: absolute;
@@ -170,7 +173,7 @@ nav li[class~="activated"]::after {
     box-sizing: border-box;
 }
 
-nav a {
+nav ul > li > :is(a, button) {
     display: flex;
     column-gap: calc(2em / 3);
     align-items: center;
@@ -179,36 +182,87 @@ nav a {
     transition-timing-function: ease;
 }
 
-nav [icon]::before {
+fds-icon[size="24"] {
+    inline-size: 1.5rem;
+}
+
+fds-icon[size="20"] {
+    inline-size: 1.25rem;
+}
+
+fds-icon[size="16"] {
     inline-size: 1rem;
 }
 
-nav a[icon="fgi"] {
-    column-gap: calc(16em / 18);
-}
-
-nav [icon="fgi"]::before {
-    inline-size: calc(4em / 3);
-}
-
-nav [icon="contribution"]::before {
-    inline-size: calc(10em / 9);
-}
-
-nav a:hover {
+nav ul > li > :is(a, button):hover {
     color: var(--text-secondary);
 }
 
-nav a:active {
+nav ul > li > :is(a, button):active {
     color: var(--text-tertiary);
+}
+
+#language {
+    justify-content: end;
+}
+
+#language > button {
+    overflow: visible;
+}
+
+#language > button::before {
+    content: "";
+    z-index: -1;
+    inset: -8px -12px;
+    position: absolute;
+    border-radius: 4px;
+}
+
+#language[class~="activated"] > button::before {
+    background-color: var(--subtle-fill-secondary);
+}
+
+#language[class~="activated"] > button:active::before {
+    background-color: var(--subtle-fill-tertiary);
+}
+
+#language menu {
+    z-index: 32;
+    inset-block-start: 24px;
+    inset-inline-end: -12px;
+    inline-size: 160px;
+    padding-block: 2px;
+    margin-block: 16px;
+    align-self: start;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#language menu {
+    transition-property: opacity;
+    transition-duration: var(--timing-fastest);
+    transition-timing-function: var(--bare-minimum-ease);
+}
+
+#language[class~="activated"] menu {
+    pointer-events: unset;
+    opacity: 1;
 }
 
 .headings {
     grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: max-content max-content auto;
     align-items: center;
-    word-break: keep-all;
+}
+
+.headings h1 {
+    font-weight: 600;
+    grid-column: unset;
+}
+
+header .button {
+    justify-self: end;
 }
 
 header > p {
@@ -231,25 +285,32 @@ article {
     scroll-margin-block-start: 2rem;
 }
 
-ul,
-ol {
+main :is(ul, ol) {
     line-height: 1.5em;
+}
+
+dialog {
+    z-index: 128;
 }
 
 @media (max-width: 1359px) {
     :root {
         --global-grid-columns: 2;
     }
+    nav ul {
+        column-gap: 32px;
+    }
 }
 
 @media (min-width: 840px) {
-    nav li[class~="activated"]::after {
+    nav ul {
+        font-size: 1.125rem;
+    }
+    nav ul > li[class~="activated"]:not(#language)::after {
         margin-inline-start: calc(16em / 9);
     }
     .headings h1 {
         font-size: 2.5rem;
-        font-weight: 600;
-        font-family: "Segoe UI Variable Display", system-ui, sans-serif;
     }
 }
 
@@ -260,20 +321,27 @@ ol {
     body {
         padding-block: 24px;
     }
+    nav {
+        margin-block-end: 32px;
+    }
     nav ul {
         column-gap: 24px;
     }
-    nav li a span {
+    nav li:not(:first-of-type) :is(a, button) span {
         display: none;
     }
-    .headings h1 {
-        font-size: 1.25rem;
-        font-weight: 500;
-        font-family: "Segoe UI Variable Display", system-ui, sans-serif;
+    .headings {
+        grid-template-columns: auto min-content;
     }
-    .headings h1 span:last-of-type {
-        display: block;
-        margin-block-start: 0.25em;
+    .headings h1:first-of-type {
+        font-size: 1.25rem;
+    }
+    .headings .button {
+        grid-column-start: 2;
+        grid-row: 1;
+    }
+    :lang(en) .headings h1:last-of-type {
+        grid-column: 1 / -1;
     }
 }
 

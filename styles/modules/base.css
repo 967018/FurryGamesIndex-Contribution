@@ -1,16 +1,28 @@
 :root {
+    --blue-50: #d3f9ff;
     --blue-200: #98ecfe;
     --blue-300: #60ccfe;
     --blue-500: #0093f9;
     --blue-700: #0078d4;
     --blue-800: #005eb7;
     --blue-900: #003d92;
+    --blue-950: #001968;
     --orange-500: #ffb900;
     --grey-950: #1b1a19;
 }
 
 :root {
-    --shadow-dialog: 0px 32px 64px rgba(0, 0, 0, 0.1876), 0px 2px 21px rgba(0, 0, 0, 0.1474);
+    --shadow-flyout: 0px 8px 16px rgb(0 0 0 / 14%);
+    --shadow-dialog: 0px 32px 64px rgb(0 0 0 / 18.76%), 0px 2px 21px rgb(0 0 0 / 14.74%);
+}
+
+:root {
+    --direct-entrance-ease: cubic-bezier(0, 0, 0, 1);
+    --bare-minimum-ease: linear;
+    --timing-default: calc(250ms * 4 / 3);
+    --timing-default: 250ms;
+    --timing-faster: calc(250ms * 2 / 3);
+    --timing-fastest: calc(250ms / 3);
 }
 
 @media (prefers-color-scheme: light) {
@@ -19,6 +31,8 @@
         --text-secondary: rgb(0 0 0 / 60.63%);
         --text-tertiary: rgb(0 0 0 / 44.58%);
         --accent-text-primary: var(--blue-900);
+        --accent-text-secondary: var(--blue-950);
+        --accent-text-tertiary: var(--blue-800);
         --text-on-accent-primary: white;
         --text-on-accent-disabled: white;
     }
@@ -26,6 +40,8 @@
         --control-fill-default: rgb(255 255 255 / 70%);
         --control-fill-secondary: rgb(249 249 249 / 50%);
         --control-fill-tertiary: rgb(249 249 249 / 30%);
+        --subtle-fill-secondary: rgb(0 0 0 / 3.73%);
+        --subtle-fill-tertiary: rgb(0 0 0 / 2.41%);
         --accent-fill: var(--blue-800);
         --accent-fill-secondary: rgb(0 94 183 / 90%);
         --accent-fill-tertiary: rgb(0 94 183 / 80%);
@@ -40,6 +56,7 @@
         --control-stroke-on-accent-default: rgb(255 255 255 / 8%);
         --card-stroke-default: rgb(0 0 0 / 5.78%);
         --surface-stroke-default: rgb(117 117 117 / 40%);
+        --surface-stroke-flyout: rgb(0 0 0 / 5.78%);
         --divider-stroke-default: rgb(0 0 0 / 8.03%);
     }
     :root {
@@ -64,6 +81,8 @@
         --text-secondary: rgb(255 255 255 / 78.6%);
         --text-tertiary: rgb(255 255 255 / 54.42%);
         --accent-text-primary: var(--blue-200);
+        --accent-text-secondary: var(--blue-50);
+        --accent-text-tertiary: var(--blue-300);
         --text-on-accent-primary: black;
         --text-on-accent-disabled: rgb(255 255 255 / 53.02%);
     }
@@ -71,6 +90,8 @@
         --control-fill-default: rgb(255 255 255 / 6.05%);
         --control-fill-secondary: rgb(255 255 255 / 8.37%);
         --control-fill-tertiary: rgb(255 255 255 / 3.26%);
+        --subtle-fill-secondary: rgb(255 255 255 / 6.05%);
+        --subtle-fill-tertiary: rgb(255 255 255 / 4.19%);
         --accent-fill: var(--blue-300);
         --accent-fill-secondary: rgb(96 204 254 / 90%);
         --accent-fill-tertiary: rgb(96 204 254 / 80%);
@@ -85,6 +106,7 @@
         --control-stroke-on-accent-default: rgb(255 255 255 / 8%);
         --card-stroke-default: rgb(0 0 0 / 10%);
         --surface-stroke-default: rgb(117 117 117 / 40%);
+        --surface-stroke-flyout: rgb(0 0 0 / 20%);
         --divider-stroke-default: rgb(255 255 255 / 8.37%);
     }
     :root {

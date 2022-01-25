@@ -1,5 +1,6 @@
 code:not(pre code) {
-    padding: 0.25em 0.5em;
+    padding-inline: 4px;
+    margin-inline: 2px;
     background-color: var(--solid-background-base);
     border-radius: 4px;
 }
@@ -13,6 +14,7 @@ code:not(pre code) {
 }
 
 header article :is(ul, ol) {
+    line-height: 1.5em;
     list-style-type: revert;
     padding-inline-start: 1rem;
 }
@@ -44,9 +46,17 @@ main .text ul:not(.expander) {
     padding-inline-start: 1rem;
 }
 
+h4 {
+    margin-block-end: 0.5em;
+}
+
 #permit .expander {
     grid-row-end: span 2;
     margin-block-end: 1.5rem;
+}
+
+.text {
+    grid-column-start: 1;
 }
 
 .interpretation {
@@ -72,7 +82,7 @@ picture img {
 .interpretation picture + figcaption {
     color: var(--text-secondary);
     line-height: 1.5em;
-    margin-block: 0.5rem 1.5em;
+    margin-block-start: 0.5rem;
     text-align: initial;
 }
 
@@ -89,6 +99,62 @@ pre span {
     color: var(--text-tertiary);
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 1.5em;
+    background-color: var(--card-background-default);
+    border-radius: 4px;
+    overflow: hidden;
+    outline: 1px solid var(--card-stroke-default);
+}
+
+thead {
+    background-color: var(--card-background-secondary);
+}
+
+thead th {
+    padding: 1rem 1rem;
+}
+
+tbody th,
+#species tbody td:last-of-type {
+    font-weight: 400;
+}
+
+table:not(#simplified-uri) tbody th,
+#species tbody td:last-of-type,
+#simplified-uri td:first-of-type {
+    font-family: monospace;
+}
+
+tbody th,
+table td {
+    padding: 0.5rem 1rem;
+}
+
+#species table {
+    table-layout: fixed;
+}
+
+#species table:not(:last-of-type) {
+    margin-block-end: 1rem;
+}
+
+#simplified-uri span {
+    color: var(--accent-text-primary);
+}
+
+.row-start {
+    border-block-start: 1px solid var(--divider-stroke-default);
+}
+
+summary {
+    margin-block-end: 0.5em;
+    line-height: 1.5em;
+    color: var(--accent-fill);
+}
+
 @media (min-width: 1360px) {
     header {
         --global-grid-columns: 4;
@@ -96,6 +162,12 @@ pre span {
     header p {
         grid-column-end: span 3;
         max-inline-size: calc(2 * 360px + 40px);
+    }
+    .interpretation {
+        margin-block-end: 1.5rem;
+    }
+    #tags summary {
+        margin-block-start: 1.5em;
     }
 }
 
@@ -119,14 +191,33 @@ pre span {
         grid-column-start: 1;
     }
     #permit .text .expander {
-        grid-row-start: 2;
+        grid-row-start: 1;
         grid-column-start: 2;
+    }
+}
+
+@media (min-width: 840px) {
+    #species thead th {
+        width: calc((120 * var(--column-span, 1) + 32 * (var(--column-span, 1) - 1)) / 760 * 100%);
+    }
+    #species thead th:last-of-type {
+        width: calc(120 / 760 * 100%);
     }
 }
 
 @media (max-width: 839px) {
     header {
         --global-grid-columns: 1;
+    }
+    #species details thead th:first-of-type {
+        width: 1em;
+    }
+    #species details tbody tr:first-of-type th:first-of-type {
+        writing-mode: vertical-lr;
+        text-align: center;
+    }
+    #species details tbody {
+        word-break: keep-all;
     }
 }
 

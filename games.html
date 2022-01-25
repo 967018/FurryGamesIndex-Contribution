@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="color-scheme" content="light dark" />
         <meta name="description" content="学习如何编写兽人控游戏索引的游戏数据文件。" />
-        <meta property="og:title" content="游戏数据文件贡献指南">
+        <meta property="og:title" content="兽人控游戏索引 - 游戏数据文件贡献指南" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://967018.github.io/FurryGamesIndex-Contribution/games.html" />
         <meta property="og:image" content="./resources/logo_bounded.png" />
@@ -13,52 +13,86 @@
         <link rel="icon" href="./resources/favicon.ico" />
         <link rel="stylesheet" href="./styles/global.css" />
         <link rel="stylesheet" href="./styles/games.css" />
+        <style>
+            :lang(en) span[lang]:not([lang="en"]),
+            :lang(zh-Hans) span[lang]:not([lang="zh-Hans"]),
+            :lang(zh-Hant) span[lang]:not([lang="zh-Hant"]) {
+                display: none;
+            }
+        </style>
         <script defer src="./scripts/global.js"></script>
     </head>
     <body type-ramp="body">
         <header>
             <nav>
-                <ul type-ramp="body-large">
+                <ul>
                     <li>
                         <a href="https://furrygames.top/zh-cn/index.html">
                             <fds-icon name="fgi" size="24" theme="shaded"></fds-icon>
-                            兽人控游戏索引
+                            <span lang="en">Furry Games Index</span>
+                            <span lang="zh-Hans">兽人控游戏索引</span>
+                            <span lang="zh-Hant">獸人控遊戲索引</span>
                         </a>
                     </li>
                     <li>
                         <a href="https://furrygames.top/zh-cn/list.html">
                             <fds-icon name="games" size="20" theme="regular"></fds-icon>
-                            <span>游戏列表</span>
+                            <span lang="en">Games</span>
+                            <span lang="zh-Hans">游戏列表</span>
+                            <span lang="zh-Hant">遊戲列表</span>
                         </a>
                     </li>
                     <li class="activated">
-                        <a href="./index.html">
+                        <a href="#">
                             <fds-icon name="person-add" size="20" theme="shaded"></fds-icon>
-                            <span>项目贡献</span>
+                            <span lang="en">Contribution</span>
+                            <span lang="zh-Hans">项目贡献</span>
+                            <span lang="zh-Hant">專案貢獻</span>
                         </a>
                     </li>
                     <li>
                         <a href="https://furrygames.top/zh-cn/search.html">
                             <fds-icon name="search" size="20" theme="regular"></fds-icon>
-                            <span>搜索</span>
+                            <span lang="en">Search</span>
+                            <span lang="zh-Hans">搜索</span>
+                            <span lang="zh-Hant">搜尋</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="https://furrygames.top/languages.html">
-                            <fds-icon name="languauge" size="20" theme="regular"></fds-icon>
-                            <span>语言</span>
-                        </a>
+                    <li id="language">
+                        <button>
+                            <fds-icon name="language" size="20" theme="regular"></fds-icon>
+                            <span lang="en">Languages</span>
+                            <span lang="zh-Hans">语言</span>
+                            <span lang="zh-Hant">語言</span>
+                        </button>
+                        <menu class="flyout list" type-ramp="body">
+                            <li><button lang="en">English</button></li>
+                            <li class="activated"><button lang="zh-Hans">简体中文</button></li>
+                            <li><button lang="zh-Hant">正體中文</button></li>
+                        </menu>
                     </li>
                 </ul>
             </nav>
             <div class="headings">
-                <h1>贡献指南<wbr /><span> - </span><span type-ramp="title-large">游戏数据文件</span></h1>
+                <h1>
+                    <span lang="en">Guides</span>
+                    <span lang="zh-Hans">贡献指南</span>
+                    <span lang="zh-Hant">貢獻指南</span>
+                    <span>-&nbsp;</span>
+                </h1>
+                <h1 type-ramp="title-large">
+                    <span lang="en">Game description files</span>
+                    <span lang="zh-Hans">游戏数据文件</span>
+                    <span lang="zh-Hant">遊戲資料檔案</span>
+                </h1>
                 <a class="button" href="./index.html" variant="standard" density="dense">
                     <fds-icon name="chevron-left" size="16" theme="regular"></fds-icon>
-                    返回
+                    <span lang="en">Back</span>
+                    <span lang="zh-Hans">返回</span>
+                    <span lang="zh-Hant">返回</span>
                 </a>
             </div>
-            <p type-ramp="subtitle">根据资料的资格能力和丰富程度，我们划分出四个阶段来编写游戏数据文件而后部署到 FGI 中。通过下面的指南，你可以根据掌握资料的情况前进到适合的阶段，只看需要看的，只写需要写的。</p>
+            <p type-ramp="subtitle">根据资料的资格能力和丰富程度，我们划分出四个阶段来编写游戏数据文件而后部署到 FGI 中。通过下面的指南，你可以根据掌握资料的情况前进到适合的阶段，只看需要看的，只写需要写的。若在参照个别游戏数据文件时发现与本指南不符的历史遗留问题，请以本指南文本为准。</p>
             <article>
                 <h2 type-ramp="subtitle">一、提议阶段</h2>
                 <ul type-ramp="body-large">
@@ -73,25 +107,25 @@
                     <li><a class="hyperlink" href="#game-id">游戏 ID</a></li>
                     <li><a class="hyperlink" href="#name">名称属性</a></li>
                     <li><a class="hyperlink" href="#expunge">软删除属性</a></li>
-                    <li><a class="hyperlink" href="#description">描述与简要描述属性</a></li>
+                    <li><a class="hyperlink" href="#description">描述属性</a></li>
                 </ul>
             </article>
             <article>
                 <h2 type-ramp="subtitle">三、预览阶段</h2>
                 <ul type-ramp="body-large">
-                    <li><a class="hyperlink">进一步认识 FGI 数据库</a></li>
-                    <li><a class="hyperlink">媒体属性</a></li>
-                    <li><a class="hyperlink">作者属性</a></li>
-                    <li><a class="hyperlink">标签属性</a></li>
-                    <li><a class="hyperlink">链接属性</a></li>
+                    <li><a class="hyperlink" href="#assets-usage">进一步认识 FGI 数据库</a></li>
+                    <li><a class="hyperlink" href="#authors">作者属性</a></li>
+                    <li><a class="hyperlink" href="#tags">标签属性</a></li>
+                    <li><a class="hyperlink" href="#links">链接属性</a></li>
+                    <li><a class="hyperlink" href="#media">媒体属性</a></li>
                 </ul>
             </article>
             <article>
                 <h2 type-ramp="subtitle">四、成品阶段</h2>
                 <ul type-ramp="body-large">
-                    <li><a class="hyperlink">数据文件的本地化</a></li>
-                    <li><a class="hyperlink">被取代属性</a></li>
-                    <li><a class="hyperlink">注释</a></li>
+                    <li><a class="hyperlink" href="#translation">数据文件的本地化</a></li>
+                    <li><a class="hyperlink" href="#replaced-by">被取代属性</a></li>
+                    <li><a class="hyperlink" href="#comment">注释</a></li>
                 </ul>
             </article>
         </header>
@@ -99,7 +133,7 @@
         <main>
             <section id="propose">
                 <h2 type-ramp="title">提议阶段</h2>
-                <p type-ramp="subtitle">此阶段专注于判断你想添加到 FGI 的游戏适不适合编入 FGI。</p>
+                <p type-ramp="subtitle">此阶段专注于判断你想添加的游戏适不适合编入 FGI。完成本阶段可向 FGI 申请添加新游戏。</p>
                 <article id="permit">
                     <h3 type-ramp="subtitle">游戏准入门槛</h3>
                     <div class="text">
@@ -123,7 +157,7 @@
                         <figure class="info-bar" severity="informational">
                             <fds-icon name="question" size="20" theme="filled"></fds-icon>
                             <figcaption class="title" type-ramp="body-strong">我能提交主要关于其他性向的兽人游戏吗？</figcaption>
-                            <p>当然可以！由于当前本项目的贡献者们大部分是同性恋，所以 FGI 里面向同性恋受众的游戏较多。不过我们也添加了一些异性恋受众游戏。如果你希望看到你喜欢的其他性向游戏编入到 FGI，不要犹豫，现在就向我们提交申请或直接提交游戏数据文件吧。</p>
+                            <p>当然可以！由于当前本项目的贡献者们大部分是同性恋，所以本站面向同性恋受众的游戏较多。不过我们也添加了一些异性恋受众的游戏。如果你希望喜欢的其他性向游戏编入到 FGI，不要犹豫，现在就向我们提交申请或直接提交游戏数据文件吧。</p>
                         </figure>
                         <figure class="info-bar" severity="informational">
                             <fds-icon name="question" size="20" theme="filled"></fds-icon>
@@ -141,7 +175,7 @@
             <hr class="divider" />
             <section id="draft">
                 <h2 type-ramp="title">草稿阶段</h2>
-                <p type-ramp="subtitle">此阶段专注于创建游戏数据文件并创建多人合作的基础。</p>
+                <p type-ramp="subtitle">此阶段专注于创建游戏数据文件和多人合作的基础。完成本阶段可向 FGI 提交游戏数据文件或拉取请求。</p>
                 <article id="database-introduction">
                     <h3 type-ramp="subtitle">初步认识 FGI 数据库</h3>
                     <div class="text">
@@ -167,7 +201,7 @@
                             <picture>
                                 <img src="./resources/illustrations/localization_process_wide.png" />
                             </picture>
-                            <figcaption>虽然《煦风新笺》的原始语言为中文，但也必须先创建主要以英文书写的元文件，之后再创建针对中文的本地化数据文件。</figcaption>
+                            <figcaption>虽然《煦风新笺》的原始语言为中文，但也必须先创建元文件，之后再创建针对中文的本地化数据文件。</figcaption>
                         </figure>
                     </div>
                 </article>
@@ -192,7 +226,7 @@
                         <p>游戏 ID 是用于引用游戏的字符串，游戏数据文件和对应的资源文件夹都以此命名。ID 优先取用游戏的官方正式英语名称（保留原始大小写）。</p>
                         <p>若游戏无英语名称：</p>
                         <ul>
-                            <li>原名称为日语的，取其罗马字表示</li>
+                            <li>原名称为日语的，取其罗马音表示</li>
                             <li>原名称为汉语的，取其拼音表示</li>
                         </ul>
                         <p>定义 ID 时要注意：</p>
@@ -224,7 +258,7 @@
                     </div>
                 </article>
                 <article id="name">
-                    <h3 type-ramp="subtitle">名称属性</h3>
+                    <h3 type-ramp="subtitle">名称属性（name）</h3>
                     <div class="text">
                         <p>游戏名称优先取用该游戏的官方英语正式名称（保留原始大小写，下文简称「英语名称」），其次取用该游戏最广泛传播的英文译名，再次取用原名称。</p>
                         <p>选取名称时要注意：</p>
@@ -251,7 +285,7 @@
                     </div>
                 </article>
                 <article id="expunge">
-                    <h3 type-ramp="subtitle">软删除属性</h3>
+                    <h3 type-ramp="subtitle">软删除属性（expunge）</h3>
                     <div class="text">
                         <p>若游戏官方未释出公开且至今能够有效获取的测试版本，则需在元文件中添加此属性。</p>
                         <p>使用该属性将使该游戏从游戏列表、站内搜索结果和通用 Web 搜索引擎中被删除，但游戏页面仍然实际存在，且不会在作者页面与该作者的“更多游戏小部件”中隐藏。游戏页面上将显示提示条。</p>
@@ -268,7 +302,7 @@
                     </div>
                 </article>
                 <article id="description">
-                    <h3 type-ramp="subtitle">描述与简要描述属性</h3>
+                    <h3 type-ramp="subtitle">描述属性（brief-description | description | description-format）</h3>
                     <div class="text">
                         <p>简要描述属性承载着游戏简要的文字介绍，用于 FGI 游戏列表的标准视图。该属性为可选属性，若未添加该属性，网页处理程序将自动从描述属性中提取简要描述。</p>
                         <p>一般简要描述应短于游戏的完整描述，但完整描述本身较短的除外。简要描述的字数原则上最大不得超过 400 个单字节字符，推荐大于 200 个单字节字符。</p>
@@ -295,7 +329,13 @@
                     </div>
                     <div class="interpretation">
                         <pre>
-                            <code>description: |</code><span><br>&nbsp;&nbsp;第一段介绍</span><span><br>&nbsp;&nbsp;第二段介绍</span><span><br>&nbsp;&nbsp;……</span>
+                            <code>description: |</code>
+                            <br>
+                            <span>&nbsp;&nbsp;第一段介绍</span>
+                            <br>
+                            <span>&nbsp;&nbsp;第二段介绍</span>
+                            <br>
+                            <span>&nbsp;&nbsp;……</span>
                         </pre>
                         <pre>
                             <code>description-format: markdown</code>
@@ -306,13 +346,1423 @@
             <hr class="divider" />
             <section id="candidate">
                 <h2 type-ramp="title">预览阶段</h2>
-                <p type-ramp="subtitle">此阶段专注于为游戏数据文件填写足以预备上架 FGI 的基础信息。</p>
+                <p type-ramp="subtitle">此阶段专注于为游戏数据文件填写足以预备上架 FGI 的基础信息。此阶段的元文件虽必须具备如下各属性，但属性中的内容可以是不完整的，从而该游戏将只在 FGI 游戏列表和相关作者页面中展出，不能被通用搜索引擎收录，直到补充完整信息进入下一阶段。</p>
+                <article id="assets-usage">
+                    <h3 type-ramp="subtitle">进一步认识 FGI 数据库</h3>
+                    <div class="text">
+                        <p>在 FGI 中，对于图片及视频的资源引用有两种方式：</p>
+                        <ul>
+                            <li>通过 URI 进行外部引用</li>
+                            <li>通过文件名进行内部引用</li>
+                        </ul>
+                        <p>缩略图与作者头像应始终存放于 FGI 项目仓库通过通过文件名进行内部引用。其他资源如游戏截图、视频应始终通过通过 URI 进行外部引用。</p>
+                    </div>
+                    <div class="interpretation">
+                        <figure class="info-bar" severity="critical">
+                            <fds-icon name="important" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">URI 链接中不得含有查询字符串，且必须包含可识别的媒体格式后辍</figcaption>
+                            <p>对于前者如 example.com/image.cgi?filename=picture.png 就不行，对于后者如 example.com/image.psd 也不行。</p>
+                        </figure>
+                    </div>
+                </article>
+                <article id="authors">
+                    <h3 type-ramp="subtitle">作者属性（authors）</h3>
+                    <div class="text">
+                        <p>作者属性以<code>authors:</code>开头，后依次添加作者条目。</p>
+                        <p>若欲添加的作者已收录 FGI 作者数据库，作者属性的<code>name</code>分属性必须取用对应作者数据文件名称属性的值。其他情况则直接填写作者知名度最广的官方名称。</p>
+                        <p>每位作者必须至少指定一个分工角色，单个作者的多个分工角色间以<code>,</code>加一空格间隔。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>authors:</code><br><code>&nbsp;&nbsp;- name: <span>作者一名称</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;role: [ <span>分工角色</span> ]</code>
+                            <br>
+                            <code>&nbsp;&nbsp;- name: <span>作者二名称</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;role: [ <span>分工角色一</span><code>, </code><span>分工角色二</span> ]</code>
+                            <br>
+                            <span>&nbsp;&nbsp;…</span>
+                        </pre>
+                        <table>
+                            <thead type-ramp="body-strong">
+                                <tr>
+                                    <th scope="col">分工角色</th>
+                                    <th scope="col">含义</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>producer</th>
+                                    <td>总制作（一般适用于独立作者和制作团队，或分工不易细分的游戏的作者）</td>
+                                </tr>
+                                <tr>
+                                    <th>animator</th>
+                                    <td>动画制作</td>
+                                </tr>
+                                <tr>
+                                    <th>artist</th>
+                                    <td>绘图</td>
+                                </tr>
+                                <tr>
+                                    <th>character-designer</th>
+                                    <td>角色设计</td>
+                                </tr>
+                                <tr>
+                                    <th>musician</th>
+                                    <td>音乐创作；配乐指导</td>
+                                </tr>
+                                <tr>
+                                    <th>programmer</th>
+                                    <td>编程</td>
+                                </tr>
+                                <tr>
+                                    <th>publisher</th>
+                                    <td>发行</td>
+                                </tr>
+                                <tr>
+                                    <th>scenographer</th>
+                                    <td>场景设计</td>
+                                </tr>
+                                <tr>
+                                    <th>screenwriter</th>
+                                    <td>剧本编写</td>
+                                </tr>
+                                <tr>
+                                    <th>translator</th>
+                                    <td>翻译</td>
+                                </tr>
+                                <tr>
+                                    <th>voice-actor</th>
+                                    <td>配音</td>
+                                </tr>
+                                <tr>
+                                    <th>others</th>
+                                    <td>其他</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text">
+                        <p>若该作者非该游戏的核心作者，且与 FGI 数据库中的关联游戏少于 3 个，则需在该作者的条目中添加<code>standalone: true</code>。</p>
+                        <p>此时可以使用<code>avatar</code>分属性为该作者指定头像图片，作者头像图片应存放至位于项目仓库 <a class="hyperlink" href="https://github.com/FurryGamesIndex/games/tree/master/assets/_avatar">games/assets/_avatar/</a> 中的对应作者文件夹内；使用<code>link-uri</code>分属性为该作者链接一个社交平台页面，对应 FGI 游戏页面中该作者名称将变为超链接。上述两个分属性均为可选属性。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>&nbsp;&nbsp;- name: <span>作者名称</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;standalone: true</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;avatar: <span>头像引用路径</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;link-uri: <span>作者社交平台链接</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;role: [ <span>分工角色</span> ]</code>
+                        </pre>
+                    </div>
+                </article>
+                <article id="tags">
+                    <h3 type-ramp="subtitle">标签属性（tags）</h3>
+                    <div class="text">
+                        <p>标签是对游戏内容及信息的另一种概括，为游戏添加完善的标签有助于 FGI 更好的分类游戏，优化筛选和搜索功能。</p>
+                        <p>标签属性以<code>tags:</code>开头，后依次添加命名空间，再在命名空间内依次添加具体标签。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>tags:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;<span>命名空间一</span>:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>标签</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>标签</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>…</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;<span>命名空间二</span>:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>标签</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>…</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;<span>…</span></code>
+                        </pre>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">type 命名空间</h4>
+                        <p>用于指明游戏的类型。其中，若添加了<code>yiff</code>与<code>gore</code>标签，该游戏页面将显示敏感内容警告信息。</p>
+                    </div>
+                    <div class="interpretation">
+                        <details>
+                            <summary>点击查看 type 命名空间下的标签</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col">标签</th>
+                                        <th scope="col">含义</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>action</th>
+                                        <td>动作游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>adventure</th>
+                                        <td>冒险游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>board</th>
+                                        <td>棋牌游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>business-sim</th>
+                                        <td>模拟经营游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>casual</th>
+                                        <td>休闲游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>dating-sim</th>
+                                        <td>模拟约会游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>fighting</th>
+                                        <td>格斗游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>music</th>
+                                        <td>音乐游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>puzzle</th>
+                                        <td>解谜游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>roguelike</th>
+                                        <td>Roguelike 游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>role-playing</th>
+                                        <td>角色扮演游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>shooter</th>
+                                        <td>射击游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>sports</th>
+                                        <td>体育游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>strategy</th>
+                                        <td>冒险游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>visual-novel</th>
+                                        <td>视觉小说</td>
+                                    </tr>
+                                    <tr>
+                                        <th>non-indie</th>
+                                        <td>非独立游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>bara</th>
+                                        <td>包含较多男同性恋向内容的游戏</td>
+                                    </tr>
+                                    <tr>
+                                        <th>yuri</th>
+                                        <td>包含较多女同性恋向内容的游戏</td>
+                                    </tr>
+                                    <tr style="background-color: var(--system-caution-background)">
+                                        <th>yiff</th>
+                                        <td>包含成人（R-18）内容的游戏</td>
+                                    </tr>
+                                    <tr style="background-color: var(--system-caution-background)">
+                                        <th>gore</th>
+                                        <td>包含怪诞内容的游戏</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">male 与 female 命名空间</h4>
+                        <p>male 与 female 命名空间共用同一套标签，用于指明游戏中兽人或人类的类型和特点。若选取的标签属于游戏中<strong>主要角色</strong>的特征，则将此标签放入对应角色的<code>male</code>（男性）或<code>female</code>（女性）分属性中。</p>
+                    </div>
+                    <div id="species" class="interpretation">
+                        <pre>
+                            <code>&nbsp;&nbsp;male:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>标签</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>标签</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>…</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;female:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>标签</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;- <span>…</span></code>
+                        </pre>
+                        <table>
+                            <thead type-ramp="body-strong">
+                                <tr>
+                                    <th scope="col">标签</th>
+                                    <th scope="col">含义</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>non-anthro</th>
+                                    <td>纯动物</td>
+                                </tr>
+                                <tr>
+                                    <th>mixed</th>
+                                    <td>跨物种杂交兽人</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <details>
+                            <summary>点击查看哺乳纲的物种标签</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">属</th>
+                                        <th scope="col">种</th>
+                                        <th scope="col">亚种</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="4">犬科</th>
+                                        <td rowspan="2">🐺犬属</td>
+                                        <td rowspan="2">灰狼</td>
+                                        <td>-</td>
+                                        <td>wolf</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🐶家犬</td>
+                                        <td>dog</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td>貉属</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>raccoon-dog</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🦊狐属</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>fox</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">属</th>
+                                        <th scope="col" style="--column-span: 2">种</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="7">猫科</th>
+                                        <td>猎豹属</td>
+                                        <td>-</td>
+                                        <td>cheetah</td>
+                                    </tr>
+                                    <tr>
+                                        <td>猫属</td>
+                                        <td>🐱家猫</td>
+                                        <td>cat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>猞猁属</td>
+                                        <td>-</td>
+                                        <td>lynx</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td rowspan="4">豹属</td>
+                                        <td>🦁狮</td>
+                                        <td>lion</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🐆豹</td>
+                                        <td>leopard</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🐯虎</td>
+                                        <td>tiger</td>
+                                    </tr>
+                                    <tr>
+                                        <td>雪豹</td>
+                                        <td>snow-leopard</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">小目</th>
+                                        <th scope="col">科</th>
+                                        <th scope="col">种</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="3">灵长目</th>
+                                        <td>🐵阔鼻小目</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td rowspan="2">monkey</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">狹鼻小目</td>
+                                        <td>猴科</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td>人科</td>
+                                        <td>🧑智人</td>
+                                        <td>humankind</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">科</th>
+                                        <th scope="col" style="--column-span: 2">亚科</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="5">偶蹄目</th>
+                                        <td rowspan="2">牛科</td>
+                                        <td>🐮牛亚科</td>
+                                        <td>cattle</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🐏羊亚科</td>
+                                        <td>sheep</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td>🐷猪科</td>
+                                        <td>-</td>
+                                        <td>pig</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🦌鹿科</td>
+                                        <td>-</td>
+                                        <td>deer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🐬海豚科</td>
+                                        <td>-</td>
+                                        <td>dolphin</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">总科</th>
+                                        <th scope="col">科</th>
+                                        <th scope="col">亚科</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="9">食肉目</th>
+                                        <td>🐻熊总科</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>bear</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td rowspan="7">🦨鼬总科</td>
+                                        <td rowspan="5">鼬科</td>
+                                        <td>水獭亚科</td>
+                                        <td>otter</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td>獾亚科</td>
+                                        <td rowspan="3">badger</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蜜獾亚科</td>
+                                    </tr>
+                                    <tr>
+                                        <td>美洲獾亚科</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td>鼬亚科</td>
+                                        <td>weasel</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td>小熊猫科</td>
+                                        <td>小熊猫亚科</td>
+                                        <td>red-panda</td>
+                                    </tr>
+                                    <tr>
+                                        <td>浣熊科</td>
+                                        <td>🦝浣熊亚科</td>
+                                        <td>raccoon</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td>獴总科</td>
+                                        <td>鬣狗科</td>
+                                        <td>-</td>
+                                        <td>hyena</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">目</th>
+                                        <th scope="col">科</th>
+                                        <th scope="col">亚科</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="5">哺乳纲</th>
+                                        <td>双门齿目</td>
+                                        <td>🦘袋鼠科</td>
+                                        <td>-</td>
+                                        <td>kangaroo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>真盲缺目</td>
+                                        <td>猬科</td>
+                                        <td>🦔猬亚科</td>
+                                        <td>hedgehog</td>
+                                    </tr>
+                                    <tr>
+                                        <td>兔形目</td>
+                                        <td>🐇兔科</td>
+                                        <td>-</td>
+                                        <td>rabbit</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">奇蹄目</td>
+                                        <td>🦏犀科</td>
+                                        <td>-</td>
+                                        <td>rhino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🐴马科</td>
+                                        <td>-</td>
+                                        <td>horse</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                        <details>
+                            <summary>点击查看其他纲的物种标签</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col" style="--column-span: 3">总目</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>两栖纲</th>
+                                        <td>🐸蛙总目</td>
+                                        <td>frog</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col" style="--column-span: 3">总目</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>鸟纲</th>
+                                        <th>🦜-</th>
+                                        <td>bird</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col" style="--column-span: 3">总目</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>软骨鱼纲</th>
+                                        <th>🦈鲨总目</th>
+                                        <td>shark</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">目</th>
+                                        <th scope="col">亚目</th>
+                                        <th scope="col">科</th>
+                                        <th scope="col">标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="5">爬行纲</th>
+                                        <td>🐊鳄目</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>crocodile</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td rowspan="4">有鳞目</td>
+                                        <td>🦎蜥蜴亚目</td>
+                                        <td>-</td>
+                                        <td>lizard</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🐍蛇亚目</td>
+                                        <td>-</td>
+                                        <td>snake</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <td rowspan="2">🐲龙亚目</td>
+                                        <td>西方龙</td>
+                                        <td>dragon</td>
+                                    </tr>
+                                    <tr>
+                                        <td>东方龙</td>
+                                        <td>lung</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">misc 命名空间</h4>
+                        <p>用于指明游戏工程或状态的相关信息。</p>
+                    </div>
+                    <div class="interpretation">
+                        <details>
+                            <summary>点击查看 misc 命名空间下的标签</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col">标签</th>
+                                        <th scope="col">游戏特性</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>freeware</th>
+                                        <td>主要内容免费（不含试玩版）</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3d</th>
+                                        <td>具有 3D 画面</td>
+                                    </tr>
+                                    <tr>
+                                        <th>pixel-art</th>
+                                        <td>具有像素风格画面</td>
+                                    </tr>
+                                    <tr>
+                                        <th>uncensored</th>
+                                        <td>成人内容未经审查删减与修改，或可开启、还原被审查的内容</td>
+                                    </tr>
+                                    <tr>
+                                        <th>full-audio</th>
+                                        <td>提供配音等完整的音频体验</td>
+                                    </tr>
+                                    <tr>
+                                        <th>multiplayer</th>
+                                        <td>支持多人游玩</td>
+                                    </tr>
+                                    <tr>
+                                        <th>online</th>
+                                        <td>提供互联网在线服务或联机功能</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <th>homophobia</th>
+                                        <td>包含反同性恋内容或情节</td>
+                                    </tr>
+                                    <tr>
+                                        <th>outside-furry-fandom</th>
+                                        <td>创作者不是或不一定是兽迷</td>
+                                    </tr>
+                                    <tr>
+                                        <th>not-only-furry-topic</th>
+                                        <td>兽人不是游戏的支配性题材</td>
+                                    </tr>
+                                    <tr class="row-start">
+                                        <th>work-in-process</th>
+                                        <td>处于开发阶段</td>
+                                    </tr>
+                                    <tr>
+                                        <th>suspended</th>
+                                        <td>开发已暂停</td>
+                                    </tr>
+                                    <tr>
+                                        <th>died</th>
+                                        <td>开发已中止或暂停超过 2 年没有更新预告</td>
+                                    </tr>
+                                    <tr>
+                                        <th>expired</th>
+                                        <td>官方获取（下载）方式已失效</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">lang 命名空间</h4>
+                        <p>用于指明游戏官方或非官方支持的语言。</p>
+                    </div>
+                    <div class="interpretation">
+                        <details>
+                            <summary>点击查看 lang 命名空间下的标签</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col">标签</th>
+                                        <th scope="col">语言</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>ar</th>
+                                        <td>阿拉伯语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>cs</th>
+                                        <td>捷克语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>de</th>
+                                        <td>德语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>en</th>
+                                        <td>英语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>en-unofficial</th>
+                                        <td>非官方英语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>es</th>
+                                        <td>西班牙语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>fr</th>
+                                        <td>法语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>hu</th>
+                                        <td>匈牙利语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>it</th>
+                                        <td>意大利语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>ja</th>
+                                        <td>日语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>ja-unofficial</th>
+                                        <td>非官方日语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>ko</th>
+                                        <td>韩语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>pl</th>
+                                        <td>波兰语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>pt</th>
+                                        <td>葡萄牙语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>ru</th>
+                                        <td>俄语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>tr</th>
+                                        <td>土耳其语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>zh</th>
+                                        <td>汉语</td>
+                                    </tr>
+                                    <tr>
+                                        <th>zh-unofficial</th>
+                                        <td>非官方汉语</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">publish 命名空间</h4>
+                        <p>用于指明游戏发行（上架）的平台。</p>
+                    </div>
+                    <div class="interpretation">
+                        <details>
+                            <summary>点击查看 publish 命名空间下的标签</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col">标签</th>
+                                        <th scope="col">平台</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>website</th>
+                                        <td>官方自建网站</td>
+                                    </tr>
+                                    <tr>
+                                        <th>steam</th>
+                                        <td>Steam</td>
+                                    </tr>
+                                    <tr>
+                                        <th>itchio</th>
+                                        <td>itch.io</td>
+                                    </tr>
+                                    <tr>
+                                        <th>google-play</th>
+                                        <td>Google Play</td>
+                                    </tr>
+                                    <tr>
+                                        <th>apple-appstore</th>
+                                        <td>App Store</td>
+                                    </tr>
+                                    <tr>
+                                        <th>patreon</th>
+                                        <td>Patreon</td>
+                                    </tr>
+                                    <tr>
+                                        <th>epic</th>
+                                        <td>Epic Games Store</td>
+                                    </tr>
+                                    <tr>
+                                        <th>gog</th>
+                                        <td>GOG.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>microsoft-store</th>
+                                        <td>Microsoft Store</td>
+                                    </tr>
+                                    <tr>
+                                        <th>booth</th>
+                                        <td>BOOTH</td>
+                                    </tr>
+                                    <tr>
+                                        <th>digiket</th>
+                                        <td>DiGiket</td>
+                                    </tr>
+                                    <tr>
+                                        <th>e-shop</th>
+                                        <td>Nintendo eShop</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">platform 命名空间</h4>
+                        <p>用于指明游戏支持的操作系统或平台。</p>
+                    </div>
+                    <div class="interpretation">
+                        <details>
+                            <summary>点击查看 platform 命名空间下的标签</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col">标签</th>
+                                        <th scope="col">操作系统或平台</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>web</th>
+                                        <td>采用 Web 技术构建的平台（网页游戏）</td>
+                                    </tr>
+                                    <tr>
+                                        <th>shockwave-flash</th>
+                                        <td>Shockwave Flash</td>
+                                    </tr>
+                                    <tr>
+                                        <th>windows</th>
+                                        <td>Microsoft Windows</td>
+                                    </tr>
+                                    <tr>
+                                        <th>android</th>
+                                        <td>Android</td>
+                                    </tr>
+                                    <tr>
+                                        <th>ios</th>
+                                        <td>iOS</td>
+                                    </tr>
+                                    <tr>
+                                        <th>macos</th>
+                                        <td>Mac OS X、OS X、macOS</td>
+                                    </tr>
+                                    <tr>
+                                        <th>linux</th>
+                                        <td>GNU/Linux</td>
+                                    </tr>
+                                    <tr>
+                                        <th>xbox</th>
+                                        <td>Microsoft Xbox</td>
+                                    </tr>
+                                    <tr>
+                                        <th>playstation</th>
+                                        <td>Sony PlayStation</td>
+                                    </tr>
+                                    <tr>
+                                        <th>psp</th>
+                                        <td>Sony PlayStation Portable</td>
+                                    </tr>
+                                    <tr>
+                                        <th>psv</th>
+                                        <td>Sony PlayStation Vita</td>
+                                    </tr>
+                                    <tr>
+                                        <th>nintendo-switch</th>
+                                        <td>Nintendo Switch</td>
+                                    </tr>
+                                    <tr>
+                                        <th>wii-u</th>
+                                        <td>Nintendo Wii U</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3ds</th>
+                                        <td>Nintendo 3DS</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2ds</th>
+                                        <td>Nintendo 2DS</td>
+                                    </tr>
+                                    <tr>
+                                        <th>nds</th>
+                                        <td>Nintendo DS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">sys 命名空间</h4>
+                        <p>用于表示该游戏在 FGI 的内部状态。</p>
+                    </div>
+                    <div class="interpretation">
+                        <table>
+                            <thead type-ramp="body-strong">
+                                <tr>
+                                    <th scope="col">标签</th>
+                                    <th scope="col">含义</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>staging</th>
+                                    <td>该游戏处于预览阶段</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+                <article id="links">
+                    <h3 type-ramp="subtitle">链接属性（links）</h3>
+                    <div class="text">
+                        <p>链接属性中必须有该游戏资源的获取链接，最好有该游戏专用的官方社交平台账号链接，还可以有补丁、赞助、众筹、百科等游戏相关资源资讯的链接。</p>
+                        <p>其中，游戏资源的获取链接不可指向非官方站点，作者明确授权的除外。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>links:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;- name: <span>链接名称一</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;uri: <span>网址</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;- name: <span>链接名称二</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;uri: <span>网址</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;<span>…</span></code>
+                        </pre>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">如果游戏没有专用的官方社交平台账号怎么办？</figcaption>
+                            <p>若游戏作者的个人社交平台账号为游戏的主要官方宣传平台，可以放入此账号。</p>
+                        </figure>
+                    </div>
+                    <div class="text">
+                        <p>我们为常见的链接名称创建了「预设名称」。在<code>name</code>分属性中写入预设名称，则可以在不同语言的 FGI 站点上自动显示该语言的链接名称，省去翻译的步骤。使用预设名称的链接也会自动配备对应站点的图标。</p>
+                    </div>
+                    <div class="interpretation">
+                        <details>
+                            <summary>点击查看所有预设名称</summary>
+                            <table>
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col">预设名称</th>
+                                        <th scope="col">链接站点</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>.website</th>
+                                        <td>官方网站主页</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.demo-version</th>
+                                        <td>试玩版获取（通用）</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.demo-version-steam</th>
+                                        <td>试玩版获取（Steam）</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.demo-version-gog.com</th>
+                                        <td>试玩版获取（GOG.com）</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.unofficial-archived-download</th>
+                                        <td>非官方存档资源获取</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.steam</th>
+                                        <td>Steam</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.itch.io</th>
+                                        <td>itch.io</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.play-store</th>
+                                        <td>Google Play</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.apple-appstore</th>
+                                        <td>App Store</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.playstation-store</th>
+                                        <td>PlayStation Store</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.epic</th>
+                                        <td>Epic Games Store</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.gog.com</th>
+                                        <td>GOG.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.microsoft-store</th>
+                                        <td>Microsoft Store</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.booth</th>
+                                        <td>BOOTH</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.digiket</th>
+                                        <td>DiGiket</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.nintendo-e-shop</th>
+                                        <td>Nintendo eShop</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.patreon</th>
+                                        <td>Patreon</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.weibo</th>
+                                        <td>微博</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.furaffinity</th>
+                                        <td>Fur Affinity</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.twitter</th>
+                                        <td>Twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.facebook</th>
+                                        <td>Facebook</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.tumblr</th>
+                                        <td>Tumblr</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.pixiv</th>
+                                        <td>Pixiv</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.discord</th>
+                                        <td>Discord</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.youtube</th>
+                                        <td>Youtube</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.unofficial-patch-en</th>
+                                        <td>非官方英文补丁</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.unofficial-version-en</th>
+                                        <td>非官方英文版本</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.unofficial-patch-zh</th>
+                                        <td>非官方中文补丁</td>
+                                    </tr>
+                                    <tr>
+                                        <th>.unofficial-version-zh</th>
+                                        <td>非官方中文版本</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <p>我们还为常用的链接网址创建了「简写 URI」。在<code>uri</code>分属性中写入简写形式的网址，可以让数据文件更具可读性。</p>
+                    </div>
+                    <div class="interpretation">
+                        <details>
+                            <summary>点击查看所有简写 URI</summary>
+                            <table id="simplified-uri">
+                                <thead type-ramp="body-strong">
+                                    <tr>
+                                        <th scope="col">目标站点</th>
+                                        <th scope="col">简写 URI</th>
+                                        <th scope="col">特征字段来源</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Steam</th>
+                                        <td>steam:<span>ID</span></td>
+                                        <td>store.<wbr />steampowered.<wbr />com/<wbr />app/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Google Play Store</th>
+                                        <td>google-play-store:<span>ID</span></td>
+                                        <td>play.<wbr />google.<wbr />com/<wbr />store/<wbr />apps/<wbr />details?id=<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Twitter</th>
+                                        <td>twitter:<span>ID</span></td>
+                                        <td>twitter.<wbr />com/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Facebook</th>
+                                        <td>facebook:<span>ID</span></td>
+                                        <td>facebook.<wbr />com/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Discord</th>
+                                        <td>discord:<span>ID</span></td>
+                                        <td>discord.<wbr />gg/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Patreon</th>
+                                        <td>patreon:<span>ID</span></td>
+                                        <td>patreon.<wbr />com/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Youtube</th>
+                                        <td>youtube:<span>ID</span></td>
+                                        <td>youtube.<wbr />com/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pixiv</th>
+                                        <td>pixiv:<span>ID</span></td>
+                                        <td>pixiv.net/<wbr />users/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Fur Affinity</th>
+                                        <td>fur<wbr />affinity:<span>ID</span></td>
+                                        <td>furaffinity.<wbr />net/<wbr />user/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tumblr</th>
+                                        <td>tumblr:<span>ID</span></td>
+                                        <td><span>ID</span>.tumblr.<wbr />com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>DeviantArt</th>
+                                        <td>deviantart:<span>ID</span></td>
+                                        <td>deviantart.<wbr />com/<span>ID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>FGI misc page</th>
+                                        <td>FGI-misc-page:<span>ID</span></td>
+                                        <td>（FGI 仓库）misc-pages/<span>ID</span>.md</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                    <div class="text">
+                        <p>若写入自定名称，可以选择为该链接指定一个图标以替换默认图标。即在<code>icon</code>分属性中填入 <a class="hyperlink" href="https://github.com/FurryGamesIndex/icons/tree/master/src/site">FGI 图标库</a>中图标的文件名（不含格式后缀）。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>&nbsp;&nbsp;- name: <span>链接名称</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;icon: <span>图标名称</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;uri: <span>网址</span></code>
+                            <br>
+                        </pre>
+                    </div>
+                </article>
+                <article id="media">
+                    <h3 type-ramp="subtitle">媒体属性（thumbnail | screenshots）</h3>
+                    <div class="text">
+                        <p>缩略图是辅佐文本介绍展示游戏风貌的重要补充，制作合适的缩略图能方便大家挑选感兴趣的游戏。</p>
+                        <p>在内容上，缩略图应清晰、美观、展现游戏整体格调，并满足以下要求：</p>
+                        <ul>
+                            <li>优先取用游戏官方对外公布的图片</li>
+                            <li>保持清晰度的条件下，等比例缩放图片素材</li>
+                            <li>标题文字完整露出</li>
+                            <li>背景不透明</li>
+                            <li>不包含额外添加的外边框</li>
+                            <li>不包含敏感信息</li>
+                        </ul>
+                        <p>在规格上，缩略图的标准（最大）尺寸为宽 360px，高 168px。尽量制作最大尺寸规格的缩略图，但不得强制放大原始规格的缩略图。对于超出最大尺寸规格的图片，应通过缩小、裁剪等方式使其符合标准。</p>
+                        <p>缩略图文件名统一为 thumbnail 加格式后缀。缩略图文件大小不得超过 100KiB，压缩超过此大小的图片时不能出现明显失真。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>thumbnail: thumbnail.<span>图片格式后缀</span></code>
+                        </pre>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">缩略图的文件格式一定得是 jpg 吗？</figcaption>
+                            <p>不一定，但不能是动态图片格式。</p>
+                        </figure>
+                        <figure class="info-bar" severity="informational">
+                            <fds-icon name="question" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">图片的失真是什么？</figcaption>
+                            <p>具体来说，图片失真的常见表现有：振铃效应、方块效应、色调分离、噪点。</p>
+                        </figure>
+                    </div>
+                    <div class="text">
+                        <p>对于游戏截图与视频属性，最基础的插入图片操作只需在<code>-</code>后写入图片链接即可。若此图片包含敏感信息，需先添加<code>sensitive</code>分属性，且赋值为 true，再在其后添加<code>uri</code>分属性，填入图片链接。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>screenshots:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;- <span>图片一链接</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;- <span>图片二链接</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;- sensitive: true</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;uri: <span>图片三链接</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;<span>…</span></code>
+                        </pre>
+                        <figure class="info-bar" severity="warning">
+                            <fds-icon name="important" size="20" theme="filled"></fds-icon>
+                            <figcaption class="title" type-ramp="body-strong">不要通过禁止上传敏感图片的图床托管包含敏感信息的图片</figcaption>
+                            <p>否则该图片容易被禁止访问或删除。</p>
+                        </figure>
+                    </div>
+                    <div class="text">
+                        <p>该属性还可写入视频链接的条目。若要嵌入 HTML 视频，需在<code>src</code>的<code>mime</code>分属性中填入视频的 MIME，而后在<code>uri</code>分属性中填入视频链接。一个视频条目可以包含多种格式的视频，只需在<code>src</code>分属性中添加更多链接条目即可。</p>
+                        <p>若要嵌入 Youtube 视频，则需添加<code>type</code>为 youtube 的链接条目，并在其后的<code>id</code>分属性中填入该视频的 ID。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>&nbsp;&nbsp;- type: video</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;src:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mime: <span>视频 MIME（格式一）</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri: <span>视频链接（格式一）</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mime: <span>视频 MIME（格式二）</span></code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri: <span>视频链接（格式二）</span></code>
+                        </pre>
+                        <pre>
+                            <code>&nbsp;&nbsp;- type: youtube</code>
+                            <br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;id: <span>视频 ID</span></code>
+                        </pre>
+                    </div>
+                </article>
             </section>
             <hr class="divider" />
             <section id="release">
                 <h2 type-ramp="title">成品阶段</h2>
                 <p type-ramp="subtitle">此阶段专注于为游戏数据文件填写足以正式上架 FGI 的更多信息，或是进一步完善已有的信息。</p>
+                <article id="translation">
+                    <h3 type-ramp="subtitle">数据文件的本地化</h3>
+                    <div class="text" style="grid-column-end: span 2">
+                        <p>若要为元文件中的内容提供翻译，则需在 <a class="hyperlink" href="https://github.com/FurryGamesIndex/games/tree/master/games/l10n">games/l10n</a> 的目标语言文件夹中创建<strong>与元文件名称相同</strong>的数据文件，并根据需要，选择属性写入翻译。</p>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">提供游戏名称的翻译</h4>
+                        <p>对于游戏名称的翻译，优先取用目标语言的官方游戏名称。若无官方译名，可以仅取用翻译质量最高的民间译名，也可以写入多个知名的民间译名。但此时必须在民间译名后补充原名称，名称间以一斜杠<code>/</code>间隔，名称与斜杠间以一空格间隔。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>name: <span>官方译名</span></code>
+                        </pre>
+                        <pre>
+                            <code>name: <span>民间译名</span> / <span>原名称</span></code>
+                        </pre>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">提供描述的翻译</h4>
+                        <p>对于游戏文本介绍的翻译，在目标语言的数据文件中添加描述与简要描述，写入翻译即可。和元文件一样可以使用<code>description-format</code>属性指定处理与渲染格式。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>brief-description: <span>目标语言文本</span></code>
+                        </pre>
+                        <pre>
+                            <code>description: |</code>
+                            <br>
+                            <code>&nbsp;&nbsp;<span>目标语言文本</span></code>
+                        </pre>
+                    </div>
+                    <div class="text">
+                        <h4 type-ramp="body-strong">提供链接名称的翻译（links-tr）</h4>
+                        <p>对于链接属性中链接名称的翻译，需在本地化数据文件中添加<code>links-tr</code>属性，再在其中添加链接名称的翻译条目。链接名称需要以<code>"</code>括起来。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>links-tr:</code>
+                            <br>
+                            <code>&nbsp;&nbsp;"<span>原链接一名称</span>": "<span>翻译后的链接一名称</span>"</code>
+                            <br>
+                            <code>&nbsp;&nbsp;"<span>原链接二名称</span>": "<span>翻译后的链接二名称</span>"</code>
+                            <br>
+                            <span>&nbsp;&nbsp;…</span>
+                        </pre>
+                    </div>
+                </article>
+                <article id="replaced-by">
+                    <h3 type-ramp="subtitle">被取代属性（replaced-by）</h3>
+                    <div class="text">
+                        <p>该属性用于有重制版且旧版未完成的游戏。在该旧版游戏的元文件中添加此属性将使得该游戏条目从 FGI 中隐藏（仍可以通过站内搜索和通用搜索引擎查找到）。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code>replaced-by: <span>新 ID</span></code>
+                        </pre>
+                    </div>
+                </article>
+                <article id="comment">
+                    <h3 type-ramp="subtitle">注释</h3>
+                    <div class="text">
+                        <p>若在编写数据文件时有特殊情况，如某属性的编辑方式或内容精神与本指南相背，应在数据文件中通过注释的形式写明。</p>
+                    </div>
+                    <div class="interpretation">
+                        <pre>
+                            <code># <span>注释</span></code>
+                        </pre>
+                    </div>
+                </article>
             </section>
         </main>
+        <script>
+            const languageMenu = document.querySelector("#language menu");
+            const tranditionalChineseRegion = ["HK", "MO", "TW"];
+            let browserLanguage = navigator.language;
+            let userLanguage = localStorage.getItem("language");
+
+            function changeMetaLanguage(lang) {
+                if (lang == "en") {
+                    document.title = "FGI - guide on contributing game description files ";
+                }
+                if (lang == "zh-Hans") {
+                    document.title = "FGI - 游戏数据文件贡献指南";
+                }
+                if (lang == "zh-Hant") {
+                    document.title = "FGI - 遊戲資料檔案貢獻指南";
+                }
+            }
+
+            function switchLanguage(lang) {
+                languageMenu.querySelectorAll("li").forEach((element) => {
+                    element.classList.remove("activated");
+                });
+                languageMenu.querySelector('button[lang="' + lang + '"]').parentElement.classList.add("activated");
+                document.documentElement.setAttribute("lang", lang);
+                changeMetaLanguage(lang);
+            }
+
+            if (userLanguage) {
+                switchLanguage(userLanguage)
+            } else {
+                let targetLanguage;
+                languageCondition = browserLanguage.includes("zh");
+                languageScriptConditionHans = browserLanguage.includes("Hans");
+                languageScriptConditionHant = browserLanguage.includes("Hant");
+                languageRegionCondition = tranditionalChineseRegion.some((element) => browserLanguage.includes(element));
+
+                if (languageCondition) {
+                    if (languageScriptConditionHans) {
+                        targetLanguage = "zh-Hans";
+                    } else if (languageScriptConditionHant) {
+                        targetLanguage = "zh-Hant";
+                    } else if (languageRegionCondition) {
+                        targetLanguage = "zh-Hant";
+                    } else {
+                        targetLanguage = "zh-Hans";
+                    }
+                } else {
+                    targetLanguage = "en";
+                }
+                switchLanguage(targetLanguage);
+            }
+        </script>
     </body>
 </html>

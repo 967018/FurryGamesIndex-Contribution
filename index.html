@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="color-scheme" content="light dark" />
         <meta name="description" content="从多个方面了解如何帮助兽人控游戏索引发展。" />
-        <meta property="og:title" content="项目贡献">
+        <meta property="og:title" content="兽人控游戏索引 - 项目贡献" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://967018.github.io/FurryGamesIndex-Contribution/index.html" />
         <meta property="og:image" content="./resources/logo_bounded.png" />
@@ -13,45 +13,71 @@
         <link rel="icon" href="./resources/favicon.ico" />
         <link rel="stylesheet" href="./styles/global.css" />
         <link rel="stylesheet" href="./styles/contribution.css" />
+        <style>
+            :lang(en) span[lang]:not([lang="en"]),
+            :lang(zh-Hans) span[lang]:not([lang="zh-Hans"]),
+            :lang(zh-Hant) span[lang]:not([lang="zh-Hant"]) {
+                display: none;
+            }
+        </style>
         <script defer src="./scripts/global.js"></script>
     </head>
     <body type-ramp="body">
         <header>
             <nav>
-                <ul type-ramp="body-large">
+                <ul>
                     <li>
                         <a href="https://furrygames.top/zh-cn/index.html">
                             <fds-icon name="fgi" size="24" theme="shaded"></fds-icon>
-                            兽人控游戏索引
+                            <span lang="en">Furry Games Index</span>
+                            <span lang="zh-Hans">兽人控游戏索引</span>
+                            <span lang="zh-Hant">獸人控遊戲索引</span>
                         </a>
                     </li>
                     <li>
                         <a href="https://furrygames.top/zh-cn/list.html">
                             <fds-icon name="games" size="20" theme="regular"></fds-icon>
-                            <span>游戏列表</span>
+                            <span lang="en">Games</span>
+                            <span lang="zh-Hans">游戏列表</span>
+                            <span lang="zh-Hant">遊戲列表</span>
                         </a>
                     </li>
                     <li class="activated">
                         <a href="#">
                             <fds-icon name="person-add" size="20" theme="shaded"></fds-icon>
-                            <span>项目贡献</span>
+                            <span lang="en">Contribution</span>
+                            <span lang="zh-Hans">项目贡献</span>
+                            <span lang="zh-Hant">專案貢獻</span>
                         </a>
                     </li>
                     <li>
                         <a href="https://furrygames.top/zh-cn/search.html">
                             <fds-icon name="search" size="20" theme="regular"></fds-icon>
-                            <span>搜索</span>
+                            <span lang="en">Search</span>
+                            <span lang="zh-Hans">搜索</span>
+                            <span lang="zh-Hant">搜尋</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="https://furrygames.top/languages.html">
-                            <fds-icon name="languauge" size="20" theme="regular"></fds-icon>
-                            <span>语言</span>
-                        </a>
+                    <li id="language">
+                        <button>
+                            <fds-icon name="language" size="20" theme="regular"></fds-icon>
+                            <span lang="en">Languages</span>
+                            <span lang="zh-Hans">语言</span>
+                            <span lang="zh-Hant">語言</span>
+                        </button>
+                        <menu class="flyout list" type-ramp="body">
+                            <li><button lang="en">English</button></li>
+                            <li class="activated"><button lang="zh-Hans">简体中文</button></li>
+                            <li><button lang="zh-Hant">正體中文</button></li>
+                        </menu>
                     </li>
                 </ul>
             </nav>
-            <h1 type-ramp="title-large">项目贡献</h1>
+            <h1 type-ramp="title-large">
+                <span lang="en">Contribution</span>
+                <span lang="zh-Hans">项目贡献</span>
+                <span lang="zh-Hant">專案貢獻</span>
+            </h1>
             <p type-ramp="subtitle">兽人控游戏索引（Furry Games Index）是一个年轻的开放型社区项目，我们承诺本项目始终为非营利性项目，并始终植根于社区。我们的项目团队规模很小，你提供的任何帮助对我们都非常宝贵。若感兴趣，帮助本项目的途径主要有如下三种。</p>
             <article>
                 <h2 type-ramp="subtitle">向朋友推荐 FGI</h2>
@@ -67,7 +93,7 @@
             </article>
             <article>
                 <h2 type-ramp="subtitle">引荐新游戏或提供修缮建议</h2>
-                <p>受限于团队规模与性质，我们不可能发现所有兽人游戏作品并将其编入本索引中；部分游戏、作者条目中可能会存在疏忽、错误或不完善的情况；本项目网站在工程开发和用户体验方面还有尚待提升、改进的地方……</p>
+                <p>受限于团队规模与性质，我们不可能发现所有兽人游戏作品并将其编入本索引中；部分游戏、作者条目中可能会存在疏忽、错误等不完善的情况；本站在工程开发和用户体验方面还有尚待提升、改进的地方……</p>
                 <p>总之，我们欢迎你对 FGI 任何方面提出任何建设性意见。提供意见的规范渠道是对应的 Github 议题栏目，但我们也欢迎你通过其他渠道联系我们或任意一位成员。</p>
                 <ul class="expander">
                     <li class="item">
@@ -117,16 +143,28 @@
         <hr class="divider" />
         <main>
             <section id="guides">
-                <h2 type-ramp="title">贡献指南</h2>
+                <h2 type-ramp="title">
+                    <span lang="en">Guides</span>
+                    <span lang="zh-Hans">贡献指南</span>
+                    <span lang="zh-Hant">貢獻指南</span>
+                </h2>
                 <article>
                     <img src="./resources/games.png" alt="" width="128" height="128" />
-                    <h3 type-ramp="subtitle">游戏数据文件</h3>
+                    <h3 type-ramp="subtitle">
+                        <span lang="en">Game description files</span>
+                        <span lang="zh-Hans">游戏数据文件</span>
+                        <span lang="zh-Hant">遊戲資料檔案</span>
+                    </h3>
                     <p>添加新游戏条目<br />或维护现有的游戏条目</p>
                     <a class="button" variant="accent" href="./games.html" role="button">查看</a>
                 </article>
                 <article>
                     <img src="./resources/authors.png" alt="" width="128" height="128" />
-                    <h3 type-ramp="subtitle">作者数据文件</h3>
+                    <h3 type-ramp="subtitle">
+                        <span lang="en">Author description files</span>
+                        <span lang="zh-Hans">作者数据文件</span>
+                        <span lang="zh-Hant">作者資料檔案</span>
+                    </h3>
                     <p>添加新作者条目<br />或维护现有的作者条目</p>
                     <a class="button" variant="accent" href="./authors.html" role="button" aria-disabled="true">查看</a>
                 </article>
@@ -174,7 +212,7 @@
                         <article>
                             <img class="avatar" src="./resources/avatars/小虎故洞.jpg" alt="" width="48" height="48" />
                             <h4 type-ramp="body-large">小虎故洞</h4>
-                            <p>参与新游戏提交，数据条目编辑。</p>
+                            <p>参与项目工程维护，新游戏提交，数据条目与项目文档编辑。</p>
                             <address>
                                 <a class="hyperlink" href="https://www.furaffinity.net/user/tiger-jungle/">Furaffinity</a>
                                 <a class="hyperlink" href="https://github.com/TigerCubDen">Github</a>
@@ -311,14 +349,84 @@
             </dialog>
         </main>
         <script>
+            const languageMenu = document.querySelector("#language menu");
+            const tranditionalChineseRegion = ["HK", "MO", "TW"];
+            const browserLanguage = navigator.language;
+            let userLanguage = localStorage.getItem("language");
+
+            const searchParams = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+            const forceLanguage = searchParams.lang;
+
+            function changeMetaLanguage(lang) {
+                if (lang == "en") {
+                    document.title = "Furry Games Index - Contribution";
+                }
+                if (lang == "zh-Hans") {
+                    document.title = "兽人控游戏索引 - 项目贡献";
+                }
+                if (lang == "zh-Hant") {
+                    document.title = "獸人控遊戲索引 - 專案貢獻";
+                }
+            }
+
+            function switchLanguage(lang) {
+                languageMenu.querySelectorAll("li").forEach((element) => {
+                    element.classList.remove("activated");
+                });
+                languageMenu.querySelector('button[lang="' + lang + '"]').parentElement.classList.add("activated");
+                document.documentElement.setAttribute("lang", lang);
+                changeMetaLanguage(lang);
+            }
+
+            if (forceLanguage) {
+                switchLanguage(forceLanguage);
+            } else if (userLanguage) {
+                switchLanguage(userLanguage);
+            } else {
+                let targetLanguage;
+                languageCondition = browserLanguage.includes("zh");
+                languageScriptConditionHans = browserLanguage.includes("Hans");
+                languageScriptConditionHant = browserLanguage.includes("Hant");
+                languageRegionCondition = tranditionalChineseRegion.some((element) => browserLanguage.includes(element));
+
+                if (languageCondition) {
+                    if (languageScriptConditionHans) {
+                        targetLanguage = "zh-Hans";
+                    } else if (languageScriptConditionHant) {
+                        targetLanguage = "zh-Hant";
+                    } else if (languageRegionCondition) {
+                        targetLanguage = "zh-Hant";
+                    } else {
+                        targetLanguage = "zh-Hans";
+                    }
+                } else {
+                    targetLanguage = "en";
+                }
+                switchLanguage(targetLanguage);
+            }
+
             document.querySelector("#share").addEventListener("click", () => {
                 navigator.share({
                     title: "兽人控游戏索引",
                     url: "https://furrygames.top/",
                 });
             });
+
             document.querySelector("#about-members").addEventListener("click", () => {
                 document.querySelector("dialog").showModal();
+                document.querySelector("dialog").animate(
+                    {
+                        transform: ["scale(1.05)", "scale(1)"],
+                    },
+                    {
+                        duration: 250,
+                        easing: "cubic-bezier(0, 0, 0, 1)",
+                        fill: "both",
+                        composite: "add",
+                    }
+                );
             });
         </script>
     </body>
